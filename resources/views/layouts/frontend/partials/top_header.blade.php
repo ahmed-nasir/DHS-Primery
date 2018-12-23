@@ -48,7 +48,7 @@
   <div id="header-bottom">
     <div class="container">
       <div class="row">
-        <div class="col-md-2 hidden-xs hidden-sm"><a href="index.html"><img src="{{asset('images/logo-2.png')}}" alt="logo"/></a></div>
+        <div class="col-md-2 hidden-xs hidden-sm"><a href="index.html"><img src="{{asset('assets/frontend/images/logo-2.png')}}" alt="logo"/></a></div>
         <d  iv class="col-md-10 col-sm-12 col-xs-12">
           <div class="get-tuch text-left top20">
             <i class="icon-telephone114"></i>

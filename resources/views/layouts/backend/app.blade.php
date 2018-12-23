@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="{{asset('assets/backend/image/x-icon')}}">
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
@@ -106,6 +106,7 @@
     @stack('js')
 
      <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     
         {!! Toastr::message() !!}

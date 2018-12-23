@@ -610,7 +610,7 @@
           <div class="proerty_text">
             <h3><a href="property_details_1.html">{{ $property->property_title}}</a></h3>
             <span>{{ $property->property_address}}</span>
-            <p class="p-font-15">{{ $property->property_description}}</p>
+            <p class="p-font-15">{{ str_limit($property->property_description,100)}}</p>
           </div>
           <div class="favroute clearfix">
             <p class="pull-md-left">${{ $property->property_price}}</p>
@@ -627,11 +627,12 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <ul class="pager">
+        {{-- <ul class="pager">
           <li><a href="#.">1</a></li>
           <li class="active"><a href="#.">2</a></li>
           <li><a href="#.">3</a></li>
-        </ul>
+        </ul> --}}
+        {{$properties->links()}}
       </div>
     </div>
   </div>

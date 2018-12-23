@@ -25,7 +25,7 @@ class CreatePostsTable extends Migration
             $table->integer('property_garage');
             $table->text('property_address');
             $table->string('property_status');
-            $table->float('property_price');
+            $table->double('property_price');
             $table->year('property_year_built');
             $table->boolean('property_publication_status');
             $table->boolean('is_approve');

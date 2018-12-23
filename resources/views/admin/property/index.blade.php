@@ -65,19 +65,21 @@
                         		    	@if ($property->property_publication_status == true )
                         		    		<span class="badge bg-blue">Published</span>
                         		    	@else
-                        		    	<span class="badge bg-pink">Published</span>
+                        		    	<span class="badge bg-pink">Unpublished</span>
                         		    	@endif
                         		    </td>
                         		    <td>
                         		    	<a title="view" class="btn btn-info waves-effect" href="">
                         		    		<i class="material-icons">visibility</i>
                         		    	</a>
-                        		    	<a title="Edit" class="btn btn-success waves-effect" href="">
+                        		    	<a title="Edit" class="btn btn-success waves-effect" href="{{ route('admin.property.edit', $property->id) }}">
                         		    		<i class="material-icons">edit</i>
                         		    	</a>
-                        		    	<button title="Delete" type="button" class="btn btn-danger waves-effect">
-                        		    		<i class="material-icons">delete</i>
-                        		    	</button>
+                        		    	<button class="btn btn-danger" type="button" onclick="delete_property({{$property->id}})"><i class="material-icons">delete</i></button>
+                                                <form id="delete-form-{{$property->id}}" action="{{ route('admin.property.destroy',$property->id) }}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                </form>
                         		    </td>
                         		</tr>
                         	@endforeach
@@ -105,4 +107,39 @@
 <script src="{{asset('assets/backend/plugins/jquery-datatable/extensions/export/buttons.html5.min.js')}}"></script>
 <script src="{{asset('assets/backend/plugins/jquery-datatable/extensions/export/buttons.print.min.js')}}"></script>
 <script src="{{asset('assets/backend/js/pages/tables/jquery-datatable.js')}}"></script>
+<script src="https://unpkg.com/sweetalert2@7.19.1/dist/sweetalert2.all.js"></script>
+    <script type="text/javascript">
+        function delete_property(id){
+                const swalWithBootstrapButtons = swal.mixin({
+                  confirmButtonClass: 'btn btn-success',
+                  cancelButtonClass: 'btn btn-danger',
+                  buttonsStyling: false,
+                })
+
+                swalWithBootstrapButtons({
+                  title: 'Are you sure?',
+                  text: "You won't be able to revert this!",
+                  type: 'warning',
+                  showCancelButton: true,
+                  confirmButtonText: 'Yes, delete it!',
+                  cancelButtonText: 'No, cancel!',
+                  reverseButtons: true
+                }).then((result) => {
+                  if (result.value) {
+                   event.preventDefault();
+                   document.getElementById('delete-form-'+id).submit();
+
+                  } else if (
+                    // Read more about handling dismissals
+                    result.dismiss === swal.DismissReason.cancel
+                  ) {
+                    swalWithBootstrapButtons(
+                      'Cancelled',
+                      'Your Data is safe 🙂',
+                      'error'
+                    )
+                  }
+                })
+                        }
+    </script>
 @endpush

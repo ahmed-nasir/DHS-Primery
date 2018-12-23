@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use App\Property;
 use Illuminate\Http\Request;
 
@@ -14,16 +15,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $properties = Property::latest()->get();
+        $properties = Post::latest()->paginate(2);
         return view('welcome',compact('properties'));
     }
 
 
     public function showPropertyDetails($id){
-        return $id;
-        // $property = Property::find($id);
-        // $agent = Property::find($id)->agent;
-        // return view('single-property',compact('property','agent'));
+       
+        $property = Post::find($id);
+        
+        return view('single-property',compact('property'));
     }
 
     // public function showUserLogin(){

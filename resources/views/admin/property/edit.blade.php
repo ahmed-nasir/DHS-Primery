@@ -34,11 +34,12 @@
                 </div>
 
                 <div class="body">
-                    <form action="{{ route('admin.property.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.property.update', $property->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" id="property_titel" name="property_title" class="form-control">
+                                <input type="text" id="property_titel" name="property_title" class="form-control" value="{{ $property->property_title }}">
                                 <label class="form-label">Property titel</label>
                             </div>
                              @if ($errors->has('property_title'))
@@ -50,7 +51,9 @@
 
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <textarea id="property_description" name="property_description" cols="30" rows="5" class="form-control no-resize" aria-required="true"></textarea>
+                                <textarea id="property_description" name="property_description" cols="30" rows="5" class="form-control no-resize" aria-required="true">
+                                	{{ $property->property_description }}
+                                </textarea>
                                 <label class="form-label">Property Description</label>
                             </div>
                             @if ($errors->has('property_description'))
@@ -70,7 +73,7 @@
                         </div>
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" id="property_area" name="property_area" class="form-control">
+                                <input type="text" id="property_area" name="property_area" class="form-control" value="{{ $property->property_area }}">
                                 <label class="form-label">Property area</label>
                             </div>
                             @if ($errors->has('property_area'))
@@ -82,7 +85,7 @@
 
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" id="property_bedroom" name="property_bedroom" class="form-control">
+                                <input type="text" id="property_bedroom" name="property_bedroom" class="form-control" value="{{ $property->property_bedroom }}">
                                 <label class="form-label">Property bedroom</label>
                             </div>
                             @if ($errors->has('property_bedroom'))
@@ -94,7 +97,7 @@
 
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" id="property_bathroom" name="property_bathroom" class="form-control">
+                                <input type="text" id="property_bathroom" name="property_bathroom" class="form-control" value="{{ $property->property_bathroom }}">
                                 <label class="form-label">Property Bathroom</label>
                             </div>
                             @if ($errors->has('property_bathroom'))
@@ -113,7 +116,7 @@
                 <div class="body">
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" id="property_garage" name="property_garage" class="form-control">
+                                <input type="text" id="property_garage" name="property_garage" class="form-control" value="{{ $property->property_garage }}">
                                 <label class="form-label">Property Garage</label>
                             </div>
                             @if ($errors->has('property_garage'))
@@ -125,7 +128,7 @@
 
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" id="property_address" name="property_address" class="form-control">
+                                <input type="text" id="property_address" name="property_address" class="form-control" value="{{ $property->property_address }}">
                                 <label class="form-label">Property Address</label>
                             </div>
                             @if ($errors->has('property_address'))
@@ -138,7 +141,7 @@
                         <div class="form-group form-float">
                             <div class="form-line">
                                 <label class="form-label">Property For(Sell/Rent)</label>
-                                <input type="text" name="property_status" id="property_status" class="form-control">
+                                <input type="text" name="property_status" id="property_status" class="form-control" value="{{ $property->property_status }}">
                                     
                                 
                             </div>
@@ -151,7 +154,7 @@
 
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" id="property_price" name="property_price" class="form-control">
+                                <input type="text" id="property_price" name="property_price" class="form-control" value="{{ $property->property_price }}">
                                 <label class="form-label">Property Price</label>
                             </div>
                             @if ($errors->has('property_price'))
@@ -163,7 +166,7 @@
 
                         <div class="form-group form-float">
                             <div class="form-line">
-                                <input type="text" id="property_year_built" name="property_year_built" class="form-control">
+                                <input type="text" id="property_year_built" name="property_year_built" class="form-control" value="{{ $property->property_year_built }}">
                                 <label class="form-label">Property Built Year</label>
                             </div>
                             @if ($errors->has('property_year_built'))
@@ -172,17 +175,16 @@
                                 </span>
                             @endif
                         </div>
-                        <input type="checkbox" id="property_publication_status" name="property_publication_status" class="filled-in" value="true">
+                        <input type="checkbox" id="property_publication_status" name="property_publication_status" class="filled-in" value="true" {{$property->property_publication_status == true ? 'checked':''}}>
                         <label for="property_publication_status">Publication Status</label>
                         <br>
-                        <button type="submit" class="btn btn-primary m-t-15 waves-effect">SAVE</button>
+                        <button type="submit" class="btn btn-primary m-t-15 waves-effect">UPDATE</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
     <!-- Vertical Layout | With Floating Label -->
-    
 @endsection
 
 @push('js')
