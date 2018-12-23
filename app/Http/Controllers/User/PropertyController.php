@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Notifications\UserPropertyApproved;
+use App\Notifications\UserPostNotifyToAdmin;
 use App\Post;
-use App\Property;
 use App\User;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
+
 class PropertyController extends Controller
 {
     /**
@@ -20,8 +20,9 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $properties = Post::latest()->get();
-        return view('admin.property.index', compact('properties'));
+        $id = Auth::id();
+        $properties = Post::latest()->where('user_id', $id)->get();
+        return view('user.property.index', compact('properties'));
     }
 
     /**
@@ -31,7 +32,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        return view('admin.property.create');
+        return view('user.property.create');
     }
 
     /**
@@ -42,7 +43,6 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->validate($request, [
             'property_title' => 'required',
             'property_description' => 'required',
@@ -79,18 +79,16 @@ class PropertyController extends Controller
         $post->property_garage = $request->property_garage;
         $post->property_address = $request->property_address;
         $post->property_status = $request->property_status;
-
-        if (Auth::user()->role->id == 1) {
-            $post->is_approve = true;
-        }else{
-            $post->is_approve = false;
-        }
+        $post->is_approve = false;
         
 
         $post->save();
-        Toastr::success('Post successfully inserted.','success');
-        return redirect()->route('admin.property.index');
 
+        $users = User::where('role_id','1')->get();
+        Notification::send($users, new UserPostNotifyToAdmin($post));
+
+        Toastr::success('Post successfully inserted.','success');
+        return redirect()->route('user.property.index');
     }
 
     /**
@@ -102,7 +100,7 @@ class PropertyController extends Controller
     public function show($id)
     {
         $property = Post::find($id);
-        return view('admin.property.show', compact('property'));
+        return view('user.property.show', compact('property'));
     }
 
     /**
@@ -114,7 +112,7 @@ class PropertyController extends Controller
     public function edit($id)
     {
         $property = Post::find($id);
-        return view('admin.property.edit', compact('property'));
+        return view('user.property.edit', compact('property'));
     }
 
     /**
@@ -144,16 +142,14 @@ class PropertyController extends Controller
 
         $post->property_title = $request->property_title;
         $post->property_price = $request->property_price;
-        $post->is_approve = $request->is_approve;
         $post->property_year_built = $request->property_year_built;
 
         if($request->property_publication_status == true){
         $post->property_publication_status = true;
 
-        } else {
+        }else{
             $post->property_publication_status = false;
         }
-
         $post->user_id = Auth::id();
         $post->property_description = $request->property_description;
         $post->property_area = $request->property_area;
@@ -162,33 +158,19 @@ class PropertyController extends Controller
         $post->property_garage = $request->property_garage;
         $post->property_address = $request->property_address;
         $post->property_status = $request->property_status;
-
-        if (Auth::user()->role->id == 1) {
+        if ($post->is_approve == true) {
             $post->is_approve = true;
-        }else{
+        } else {
             $post->is_approve = false;
         }
         
+        
 
         $post->save();
-        Toastr::success('Post successfully Updated.','success');
-        return redirect()->route('admin.property.index');
+        Toastr::success('Post successfully inserted.','success');
+        return redirect()->route('user.property.index');
     }
 
-    //approve property 
-    public function approve(Request $request, $id){
-        $property = Post::find($id);
-        if ($property->is_approve == false) {
-            $property->is_approve = true;
-            $property->save();
-        }
-        
-        $users = User::where('role_id','2')->get();
-        Notification::send($users, new UserPropertyApproved($property));
-
-        Toastr::success('Post Approved Successfully', 'success');
-        return redirect()->back();
-    }
     /**
      * Remove the specified resource from storage.
      *
@@ -197,10 +179,6 @@ class PropertyController extends Controller
      */
     public function destroy($id)
     {
-        $property = Post::find($id);
-        $property->delete();
-
-        Toastr::success('Post Deleted Successfully...', 'success');
-        return redirect()->route('admin.property.index');
+        //
     }
 }

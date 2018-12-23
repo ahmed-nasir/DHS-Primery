@@ -50,11 +50,17 @@
                                 <span>Property</span>
                             </a>
                         </li>
-                    @elseif(Request::is('admin*'))
-                        <li class="active">
+                    @elseif(Request::is('user*'))
+                        <li class="{{ Request::is('user/dashboard') ? 'active' : ''}}">
                             <a href="{{ route('user.dashboard') }}">
                                 <i class="material-icons">home</i>
                                 <span>Dahsboard</span>
+                            </a>
+                        </li>
+                        <li class="{{ Request::is('user/property*')?'active' : ''}}">
+                            <a href="{{ route('user.property.index') }}">
+                                <i class="material-icons">apps</i>
+                                <span>Property</span>
                             </a>
                         </li>
                     @endif

@@ -7,7 +7,7 @@
 
 @section('content')
 <div class="block-header">
-	<a class="btn btn-primary waves-effect" href="{{ route('admin.property.create') }}"><i class="material-icons">add</i><span>Add New Property</span></a>
+	<a class="btn btn-primary waves-effect" href="{{ route('user.property.create') }}"><i class="material-icons">add</i><span>Add New Property</span></a>
 </div>
 
 <!-- Exportable Table -->
@@ -69,14 +69,14 @@
                         		    	@endif
                         		    </td>
                         		    <td>
-                        		    	<a title="view" class="btn btn-info waves-effect" href="{{ route('admin.property.show', $property->id) }}">
+                        		    	<a title="view" class="btn btn-info waves-effect" href="{{ route('user.property.show', $property->id) }}">
                         		    		<i class="material-icons">visibility</i>
                         		    	</a>
-                        		    	<a title="Edit" class="btn btn-success waves-effect" href="{{ route('admin.property.edit', $property->id) }}">
+                        		    	<a title="Edit" class="btn btn-success waves-effect" href="{{ route('user.property.edit', $property->id) }}">
                         		    		<i class="material-icons">edit</i>
                         		    	</a>
                         		    	<button class="btn btn-danger" type="button" onclick="delete_property({{$property->id}})"><i class="material-icons">delete</i></button>
-                                                <form id="delete-form-{{$property->id}}" action="{{ route('admin.property.destroy',$property->id) }}" method="post">
+                                                <form id="delete-form-{{$property->id}}" action="{{ route('user.property.destroy',$property->id) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>
