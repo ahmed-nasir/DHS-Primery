@@ -27,11 +27,13 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin', 'middlewar
 	Route::resource('property','PropertyController');
 
 	Route::put('property/{property}/approve','PropertyController@approve')->name('property.approve');
+	Route::get('profile','DashboardController@profile')->name('profile');
 });
 
 Route::group(['as'=>'user.','prefix'=>'user', 'namespace'=>'User', 'middleware'=>['auth','user']],function(){
 
 	Route::get('dashboard','DashboardController@index')->name('dashboard');
 	Route::resource('property','PropertyController');
+	Route::get('profile','DashboardController@profile')->name('profile');
 });
 

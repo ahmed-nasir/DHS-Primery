@@ -82,22 +82,14 @@
         <div class="row">
           <div class="col-md-12">
             <div id="property-d-1" class="owl-carousel">
-              <div class="item"><img src="{{asset('assets/frontend/images/property-d-1-1.jpg')}}" alt="image" /></div>
-              <div class="item"><img src="{{asset('assets/frontend/images/property-d-1-1.jpg')}}" alt="image" /></div>
-              <div class="item"><img src="{{asset('assets/frontend/images/property-d-1-1.jpg')}}" alt="image" /></div>
-              <div class="item"><img src="{{asset('assets/frontend/images/property-d-1-1.jpg')}}" alt="image" /></div>
-              <div class="item"><img src="{{asset('assets/frontend/images/property-d-1-1.jpg')}}" alt="image" /></div>
-              <div class="item"><img src="{{asset('assets/frontend/images/property-d-1-1.jpg')}}" alt="image" /></div>
-              <div class="item"><img src="{{asset('assets/frontend/images/property-d-1-1.jpg')}}" alt="image" /></div>
+              @foreach($property->pimages as $pic)
+              <div class="item"><img src="{{Storage::url('propertyImages/'.$pic->name)}}" alt="image" /></div>
+              @endforeach
             </div>
             <div id="property-d-1-2" class="owl-carousel">
-              <div class="item"><img src="{{asset('assets/frontend/images/property-d-s-1-1.jpg')}}" alt="image" /></div>
-              <div class="item"><img src="{{asset('assets/frontend/images/property-d-s-1-2.jpg')}}" alt="image" /></div>
-              <div class="item"><img src="{{asset('assets/frontend/images/property-d-s-1-3.jpg')}}" alt="image" /></div>
-              <div class="item"><img src="{{asset('assets/frontend/images/property-d-s-1-4.jpg')}}" alt="image" /></div>
-              <div class="item"><img src="{{asset('assets/frontend/images/property-d-s-1-5.jpg')}}" alt="image" /></div>
-              <div class="item"><img src="{{asset('assets/frontend/images/property-d-s-1-1.jpg')}}" alt="image" /></div>
-              <div class="item"><img src="{{asset('assets/frontend/images/property-d-s-1-2.jpg')}}" alt="image" /></div>
+              @foreach($property->pimages as $pic)
+              <div class="item"><img src="{{Storage::url('propertyImages/'.$pic->name)}}" alt="image" /></div>
+              @endforeach
             </div>
           </div>
         </div>

@@ -106,7 +106,6 @@
                   reverseButtons: true
                 }).then((result) => {
                   if (result.value) {
-                   event.preventDefault();
                    document.getElementById('approve-form-'+id).submit();
 
                   } else if (

@@ -2,7 +2,7 @@
             <!-- User Info -->
             <div class="user-info">
                 <div class="image">
-                    <img src="{{Storage::url(Auth::user()->image)}}" width="48" height="48" alt="User" />
+                    <img src="{{Storage::url(Auth::user()->image)}}" width="48" height="48" alt="{{Auth::user()->id}}" />
                 </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</div>
@@ -10,7 +10,11 @@
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
+                            @if (Auth::user()->role_id == 1)
+                            <li><a href="{{route('admin.profile')}}"><i class="material-icons">person</i>Profile</a></li>
+                            @else
+                            <li><a href="{{route('admin.profile')}}"><i class="material-icons">person</i>Profile</a></li>
+                            @endif
                             <li role="separator" class="divider"></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
@@ -50,6 +54,12 @@
                                 <span>Property</span>
                             </a>
                         </li>
+                        <li class="{{ Request::is('admin/profile*')?'active' : ''}}">
+                            <a href="{{ route('admin.profile') }}">
+                                <i class="material-icons">person</i>
+                                <span>Profile</span>
+                            </a>
+                        </li>
                     @elseif(Request::is('user*'))
                         <li class="{{ Request::is('user/dashboard') ? 'active' : ''}}">
                             <a href="{{ route('user.dashboard') }}">
@@ -61,6 +71,12 @@
                             <a href="{{ route('user.property.index') }}">
                                 <i class="material-icons">apps</i>
                                 <span>Property</span>
+                            </a>
+                        </li>
+                        <li class="{{ Request::is('user/profile*')?'active' : ''}}">
+                            <a href="{{ route('user.profile') }}">
+                                <i class="material-icons">person</i>
+                                <span>Profile</span>
                             </a>
                         </li>
                     @endif

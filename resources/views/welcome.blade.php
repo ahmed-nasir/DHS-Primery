@@ -596,7 +596,11 @@
     <div class="col-md-4 col-sm-6">
       <div class="property_item bottom40">
         <div class="image">
-          <img src="{{asset('assets/frontend/images/property-listing-6.jpg')}}" alt="listin" class="img-responsive">
+          <?php $i=1; ?>
+          @foreach($property->pimages as $pic)
+          <img src="{{Storage::url('propertyImages/'.$pic->name) }}" alt="image" class="img-responsive">
+           <?php $i++; if($i==2) break; ?>
+          @endforeach
           <div class="property_meta">
           <span><i class="fa fa-object-group"></i>{{ $property->property_area}} sq ft </span>
           <span><i class="fa fa-bed"></i>{{ $property->property_bedroom}} Bed Room</span>
@@ -650,7 +654,7 @@
         <div class="line_3"></div>
       </div>
     </div>
-    <form class="findus">
+    <form action="" method="" class="findus">
       <div class="row">
         <div class="col-md-3 col-sm-3">
           <div class="single-query form-group">
@@ -695,83 +699,84 @@
           </div>
         </div>
       </div>
+      <div class="search-2">
+        <form class="findus">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-3 col-sm-3">
+                  <div class="single-query form-group">
+                      <label>Bed Room</label>
+                      <select class="selectpicker" data-live-search="true">
+                        <option class="active">Any</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                  <div class="single-query form-group">
+                      <label>Bath Room</label>
+                      <select class="selectpicker" data-live-search="true">
+                        <option class="active">Any</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                  <div class="single-query form-group">
+                    <label>Squre Fit Min</label>
+                    <input type="text" class="keyword-input" placeholder="Any">
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                  <div class="single-query form-group">
+                    <label>Squre Fit Max</label>
+                    <input type="text" class="keyword-input" placeholder="Any">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+{{--                 <div class="col-md-7 col-sm-6">
+                  <div class="single-query-slider top10 bottom10">
+                    <label>Price Range:</label>
+                    <div class="price text-right">
+                      <span>$</span>
+                      <div class="leftLabel"></div>
+                      <span>to $</span>
+                      <div class="rightLabel"></div>
+                    </div>
+                    <div data-range_min="0" data-range_max="500" data-cur_min="0" data-cur_max="2000" class="nstSlider">
+                      <div class="bar"></div>
+                      <div class="leftGrip"></div>
+                      <div class="rightGrip"></div>
+                    </div>
+                  </div>
+                </div> --}}
+                <div class="col-md-5 col-sm-6 text-right">
+                  <div class="query-submit-button top10">
+                    <input type="submit" class="btn_fill" value="Search">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </form>
-    <div class="search-2">
-      <form class="findus">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="row">
-              <div class="col-md-3 col-sm-3">
-                <div class="single-query form-group">
-                    <label>Bed Room</label>
-                    <select class="selectpicker" data-live-search="true">
-                      <option class="active">Any</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                    </select>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-3">
-                <div class="single-query form-group">
-                    <label>Bath Room</label>
-                    <select class="selectpicker" data-live-search="true">
-                      <option class="active">Any</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                    </select>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-3">
-                <div class="single-query form-group">
-                  <label>Squre Fit Min</label>
-                  <input type="text" class="keyword-input" placeholder="Any">
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-3">
-                <div class="single-query form-group">
-                  <label>Squre Fit Max</label>
-                  <input type="text" class="keyword-input" placeholder="Any">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="row">
-              <div class="col-md-7 col-sm-6">
-                <div class="single-query-slider top10 bottom10">
-                  <label>Price Range:</label>
-                  <div class="price text-right">
-                    <span>$</span>
-                    <div class="leftLabel"></div>
-                    <span>to $</span>
-                    <div class="rightLabel"></div>
-                  </div>
-                  <div data-range_min="0" data-range_max="500" data-cur_min="0" data-cur_max="2000" class="nstSlider">
-                    <div class="bar"></div>
-                    <div class="leftGrip"></div>
-                    <div class="rightGrip"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-5 col-sm-6 text-right">
-                <div class="query-submit-button top10">
-                  <input type="submit" class="btn_fill" value="Search">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-    <div class="row">
+
+{{--     <div class="row">
       <div class="col-md-12">
         <div class="group-button-search">
           <a data-toggle="collapse" href=".search-propertie-filters" class="more-filter">
@@ -837,7 +842,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
   </div>
 </section>
 <!-- PROPERTY SEARCH --> 

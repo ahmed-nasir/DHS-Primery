@@ -32,6 +32,7 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{asset('assets/backend/css/themes/all-themes.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css">
     @stack('css')
     <style type="text/css">
         
@@ -83,6 +84,7 @@
     </section>
 
 <!-- Jquery Core Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
     <script src="{{asset('assets/backend/plugins/jquery/jquery.min.js')}}"></script>
 
     <!-- Bootstrap Core Js -->
