@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style type="text/css">
+    .single-post-slider-image {
+      <?php $i=1; ?>
+          @foreach($property->pimages as $pic)
+            background: url({{Storage::url('propertyImages/'.$pic->name)}});
+        <?php $i++; if($i==2) break; ?>
+          @endforeach
+    position: relative;
+    z-index: 1;
+    background-repeat: no-repeat;   
+}
+  </style>
+  
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -49,7 +62,8 @@
 
 
 <!-- PAGE TITLE -->
-<div class="page-title page-main-section parallaxie">
+<div class="page-title single-post-slider-image parallaxie">
+    
   <div class="container padding-bottom-top-120 text-uppercase text-center">
     <div class="main-title">
       <h1>Property</h1>
