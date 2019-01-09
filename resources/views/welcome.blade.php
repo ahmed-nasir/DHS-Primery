@@ -30,7 +30,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                   
-                                    <a style="display: block;" class="dropdown-item" href="">
+                                    <a style="display: block;" class="dropdown-item" href="{{route('user.property.create')}}">
                                     <i class="icon-icons179"></i><span class="glyphicon glyphicon-plus" style="color:red;">Add Property</span>
                                     </a>
                                     <a style="display: block;" class="dropdown-item" href="{{ route('logout') }}"

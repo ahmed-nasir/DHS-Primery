@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Notifications\UserPropertyApproved;
 use App\Post;
-use App\PostImage;
+use App\Post_image;
 use App\Property;
 use App\User;
 use Brian2694\Toastr\Facades\Toastr;
@@ -107,7 +107,7 @@ class PropertyController extends Controller
                 $imagename = $currentDate.'-'.uniqid().'.'.$image_array[$i]->getClientOriginalExtension();
                 $postimage = Image::make($image_array[$i])->resize(500,500)->stream();
                 Storage::disk('public')->put('propertyImages/'.$imagename, $postimage);
-                $img = new PostImage();
+                $img = new Post_image();
                 $img->name = $imagename;
                 $img->post_id = $currentId;
                 $img->save();
