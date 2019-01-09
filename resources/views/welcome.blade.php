@@ -6,16 +6,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-12">
-          <p class="p-font-15 p-white">We are Best in Town With 40 years of Experience.</p>
+          <p class="p-font-15 p-white">Developer House Solution</p>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-12 text-right">
           <div class="header-top-links">
             <ul>
-              <li><a href="favorite-properties.html"><i class="icon-heart2"></i>Favorites</a></li>
+              <li><a href="{{ route('about') }}"><i class="icon-heart2"></i>About Us</a></li>
               <li class="af-line"></li>
-              <li><a href="submit-property.html"><i class="icon-icons215"></i>Submit Property</a></li>
-              <li class="af-line"></li>
-              <li><a href="my-properties.html"><i class="icon-icons215"></i>My Property</a></li>
+              <li><a href="{{route('contact')}}"><i class="icon-icons215"></i>Contact Us</a></li>
 
               @guest
               <li><a href="{{route('login')}}" class="header-login"><i class="icon-icons179"></i>Login</a></li>
@@ -59,7 +57,7 @@
 <!-- Navbar on Click -->
 <div class="sidebar_menu">
   <nav class="pushmenu pushmenu-left">
-    <a class="push-logo" href="index.html"><img src="images/short_icon.png" alt="logo"></a>
+    <a class="push-logo" href="index.html"><img src="{{asset('assets/frontend/images/short_icon.png')}}" alt="logo"></a>
     <ul class="push_nav bottom20">
       <li class="dropdown active">
                 <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Homes</a>
@@ -392,7 +390,6 @@
           data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
-          <a href="https://themeforest.net/item/idea-homes-real-estate-template/18809246" class="btn_fill">Buy Now</a>
         </div>
       </li>
       <li data-transition="crossfade">
@@ -432,7 +429,6 @@
           data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
-          <a href="https://themeforest.net/item/idea-homes-real-estate-template/18809246" class="btn_fill">Buy Now</a>
         </div>
       </li>
       <li data-transition="fadefromleft">
@@ -472,7 +468,6 @@
           data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
-          <a href="https://themeforest.net/item/idea-homes-real-estate-template/18809246" class="btn_fill">Buy Now</a>
         </div>
       </li>
     </ul>

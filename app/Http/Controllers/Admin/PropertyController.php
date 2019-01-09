@@ -100,7 +100,6 @@ class PropertyController extends Controller
             }
             $image_array = $request->file('images');
             $array_len = count($image_array);
-            echo $array_len;
             for ($i=0; $i < $array_len ; $i++) { 
 
                 $currentDate = Carbon::now()->toDateString();

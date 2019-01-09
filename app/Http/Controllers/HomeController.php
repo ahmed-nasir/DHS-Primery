@@ -30,4 +30,11 @@ class HomeController extends Controller
     // public function showUserLogin(){
     //     return view('userLogin');
     // }
+    public function contactus(){
+        return view('contact_us');
+    }
+
+    public function aboutus(){
+        return view('aboutus');
+    }
 }

@@ -63,7 +63,7 @@
                             <div class="form-line">
                                 <label>Feature Image</label>
                                 <div class="fallback">
-                                    <input name="images" type="file">
+                                    <input name="images[]" type="file" multiple="">
                                 </div>
                             </div>
 

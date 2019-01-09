@@ -20,6 +20,8 @@ Auth::routes();
 // frontend route
 Route::get('/', 'HomeController@index')->name('welcome');
 Route::get("property/details/{id}", "HomeController@showPropertyDetails")->name('property.details');
+Route::get('contactus','HomeController@contactus')->name('contact');
+Route::get('aboutus','HomeController@aboutus')->name('about');
 
 
 Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth','admin']],function(){
