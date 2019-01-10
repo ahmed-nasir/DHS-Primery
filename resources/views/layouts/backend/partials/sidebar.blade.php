@@ -54,6 +54,18 @@
                                 <span>Property</span>
                             </a>
                         </li>
+                        <li class="{{ Request::is('admin/allsubscriber')?'active' : ''}}">
+                            <a href="{{ route('admin.property.subscriber') }}">
+                                <i class="material-icons">subscriptions</i>
+                                <span>Subscriber</span>
+                            </a>
+                        </li>
+                        <li class="{{ Request::is('admin/alluser*')?'active' : ''}}">
+                            <a href="{{route('admin.our.user')}}">
+                                <i class="material-icons">supervisor_account</i>
+                                <span>All Users</span>
+                            </a>
+                        </li>
                         <li class="{{ Request::is('admin/profile*')?'active' : ''}}">
                             <a href="{{ route('admin.profile') }}">
                                 <i class="material-icons">person</i>

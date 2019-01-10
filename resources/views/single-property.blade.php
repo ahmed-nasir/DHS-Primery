@@ -25,7 +25,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
+<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 </head>
 
 <body>
@@ -87,8 +87,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h2 class="text-uppercase">987 Cantebury Drive</h2>
-        <p class="bottom20">45 Regent Street, London, UK</p>
+        <h2 class="text-uppercase">{{$property->property_title}}</h2>
+        <p class="bottom20">{{$property->property_address}}</p>
       </div>
     </div>
     <div class="row">
@@ -395,55 +395,41 @@
             </div>
           </div>
           <div class="row">
-            <form class="findus">
+            <form action="{{  route('property-by-search') }}" method="POST" class="findus">
+              @csrf
               <div class="col-md-12">
                 <div class="single-query">
-                  <input type="text" class="keyword-input" placeholder="Keyword (e.g. 'office')">
+                  <input type="text" class="keyword-input" placeholder="Keyword" name="key">
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="single-query">
-                    <select class="selectpicker" data-live-search="true">
+                    <select class="selectpicker" data-live-search="true" name="location">
                       <option selected="" value="any">Location</option>
-                      <option>Location - 1</option>
-                      <option>Location - 2</option>
-                      <option>Location - 3</option>
-                      <option>Location - 4</option>
+                      <option>Dhaka</option>
+                      <option>Sylet</option>
+                      <option>Barishal</option>
+                      <option>Tangial</option>
                     </select>
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="single-query">
-                    <select class="selectpicker" data-live-search="true">
-                      <option class="active">Property Type</option>
-                      <option>Property Type - 1</option>
-                      <option>Property Type - 2</option>
-                      <option>Property Type - 3</option>
-                      <option>Property Type - 4</option>
-                    </select>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="single-query">
-                    <select class="selectpicker" data-live-search="true">
+                    <select class="selectpicker" data-live-search="true" name="status">
                       <option class="active">Property Status</option>
-                      <option>Property Status - 1</option>
-                      <option>Property Status - 2</option>
-                      <option>Property Status - 3</option>
-                      <option>Property Status - 4</option>
+                      <option>Sell</option>
+                      <option>Rent</option>
                     </select>
                 </div>
               </div>
-            </form>
           </div>
           <div class="row search-2">
-            <form action="#">
               <div class="col-md-12">
                 <div class="row">
                   <div class="col-md-6 col-sm-6">
                     <div class="single-query">
-                        <select class="selectpicker" data-live-search="true">
-                          <option class="active">Min Beds</option>
+                        <select class="selectpicker" data-live-search="true" name="bedroom">
+                          <option class="active">Bed Room</option>
                           <option>1</option>
                           <option>2</option>
                           <option>3</option>
@@ -455,8 +441,8 @@
                   </div>
                   <div class="col-md-6 col-sm-6">
                     <div class="single-query">
-                        <select class="selectpicker" data-live-search="true">
-                          <option class="active">Min Baths</option>
+                        <select class="selectpicker" data-live-search="true" name="bathroom">
+                          <option class="active">Bathroom</option>
                           <option>1</option>
                           <option>2</option>
                           <option>3</option>
@@ -472,29 +458,9 @@
                 <div class="row">
                   <div class="col-md-6 col-sm-6">
                     <div class="single-query">
-                      <input type="text" class="keyword-input" placeholder="Min Area (sq ft)">
+                      <input type="text" class="keyword-input" placeholder="Min Area (sq ft)" name="sqf">
                     </div>
                   </div>
-                  <div class="col-md-6 col-sm-6">
-                    <div class="single-query">
-                      <input type="text" class="keyword-input" placeholder="Max Area (sq ft)">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="single-query-slider">
-                  <label>Price Range:</label>
-                  <div class="price text-right">
-                    <span>$</span>
-                    <div class="leftLabel"></div>
-                    <span>to $</span>
-                    <div class="rightLabel"></div>
-                  </div>
-                  <div data-range_min="0" data-range_max="1500000" data-cur_min="0" data-cur_max="1500000" class="nstSlider">
-                    <div class="bar"></div>
-                    <div class="leftGrip"></div>
-                    <div class="rightGrip"></div>
                   </div>
                 </div>
               </div>
@@ -503,7 +469,7 @@
                   <button type="submit" class="btn_fill black">Search</button>
                 </div>
               </div>
-              <div class="col-md-6 text-center">
+{{--               <div class="col-md-6 text-center">
                 <div class="group-button-search">
                   <a data-toggle="collapse" href=".search-propertie-filters" class="more-filter">
                     <i class="fa fa-plus text-1 bg-color-yello" aria-hidden="true"></i> <i class="fa fa-minus text-2 hide bg-color-yello" aria-hidden="true"></i>
@@ -511,10 +477,10 @@
                     <div class="text-2 hide">more options</div>
                   </a>
                 </div>
-              </div>
-            </form>
+              </div> --}}
           </div>
-          <div class="search-propertie-filters collapse">
+        </form>
+{{--           <div class="search-propertie-filters collapse">
             <div class="container-2">
               <div class="row">
                 <div class="col-md-6">
@@ -559,9 +525,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
         </div>
-        <div class="row">
+{{--         <div class="row">
           <div class="col-md-12">
             <h3 class="text-uppercase  bottom40 top40">Recent <span class="color_red">Properties</span></h3>
             <div class="media">
@@ -649,7 +615,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
       </div>
     </div>
   </div>
@@ -893,8 +859,8 @@
       <div class="col-md-4 col-sm-4 col-xs-12 text-center">
         <div class="get-tuch"><i class="icon-icons74"></i>
           <ul>
-            <li><h4 class="p-font-17">Victoria Hall,</h4></li>
-            <li><p class="p-font-15">Idea Homes, australia</p> </li>
+            <li><h4 class="p-font-17">Bangoboundhu Hall,</h4></li>
+            <li><p class="p-font-15">Developer House Solution, Dhaka</p> </li>
           </ul>
         </div>
       </div>
@@ -902,7 +868,7 @@
         <div class="get-tuch"><i class=" icon-icons142"></i>
           <ul>
             <li><h4 class="p-font-17">Email Address</h4></li>
-            <li><a href="#."><p class="p-font-15">info@ideahomes.com</p></a></li>
+            <li><a href="#."><p class="p-font-15">info@dhs.com</p></a></li>
           </ul>
         </div>
       </div>
@@ -918,11 +884,11 @@
     <div class="row border-bottom">
       <div class="col-sm-6 col-md-3">
         <div class="widget dark"> <img class="mt-5 mb-20" alt="" src="{{asset('assets/frontend/images/logo-2.png')}}">
-          <p>203, Name Labs, Behind Alis Steet, Melbourne, City Name.</p>
+          <p>203, Muhammadpur, Behind Asad Gate, Dhaka.</p>
           <ul class="list-inline mt-5">
             <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">123-456-789</a> </li>
-            <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">contact@yourdomain.com</a> </li>
-            <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">www.yourdomain.com</a> </li>
+            <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">contact@nasir-admin.com</a> </li>
+            <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">www.dhs.com</a> </li>
           </ul>
         </div>
       </div>
@@ -1025,7 +991,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-sm-5">
-          <p class="font-11 text-black-777 m-0 copy-right">Copyright: 2018 <a href="#."><span class="color_red">IDEA HOMES</span></a>. All Rights Reserved</p>
+          <p class="font-11 text-black-777 m-0 copy-right">Copyright: 2018 <a href="#."><span class="color_red">Developer House Solution</span></a>. All Rights Reserved</p>
         </div>
         <div class="col-md-6 col-sm-7 text-right">
           <div class="widget no-border m-0">
@@ -1256,6 +1222,21 @@
 
 <!--Custom Js -->
 <script src="{{asset('assets/frontend/js/functions.js')}}"></script>
+ <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+
+    {!! Toastr::message() !!}
+
+<script>
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+            toastr.error('{{$error}}','Error',{
+                clseButton:true,
+                progressBar:true
+            });
+        @endforeach
+    @endif
+</script>
 </body>
 </html> 

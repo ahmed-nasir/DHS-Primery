@@ -46,5 +46,22 @@
     <!-- Custom Js -->
     <script src="{{asset('assets/backend/js/admin.js')}}"></script>
     <script src="{{asset('assets/backend/js/pages/examples/sign-up.js')}}"></script>
+    
+     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    
+        {!! Toastr::message() !!}
+
+    <script>
+        @if($errors->any())
+            @foreach($errors->all() as $error)
+                toastr.error('{{$error}}','Error',{
+                    clseButton:true,
+                    progressBar:true
+                });
+            @endforeach
+        @endif
+    </script>
 </body>
 </html>

@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-12">
-          <p class="p-font-15 p-white">Developer House Solution</p>
+          <p class="p-font-15 p-white"><a href="/">Developer House Solution</a></p>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-12 text-right">
           <div class="header-top-links">
@@ -54,23 +54,23 @@
                 <h4>Phone Number</h4>
               </li>
               <li>
-                <p>+1 900 234 567 - 68</p>
+                <p>+8801689044066</p>
               </li>
             </ul>
           </div>
-          <div class="get-tech-line top20"><img src="{{asset('images/get-tuch-line.png')}}" alt="line"/></div>
+          <div class="get-tech-line top20"><img src="{{asset('assets/frontend/images/get-tuch-line.png')}}" alt="line"/></div>
           <div class="get-tuch text-left top20">
             <i class="icon-icons74"></i>
             <ul>
               <li>
-                <h4>Victoria Hall,</h4>
+                <h4>Uttara,</h4>
               </li>
               <li>
-                <p>Idea Homes Melbourne, australia</p>
+                <p>DHS, Bangladesh</p>
               </li>
             </ul>
           </div>
-          <div class="get-tech-line top20"><img src="{{asset('images/get-tuch-line.png')}}" alt="line"/></div>
+          <div class="get-tech-line top20"><img src="{{asset('assets/frontend/images/get-tuch-line.png')}}" alt="line"/></div>
           <div class="get-tuch text-left top20">
             <i class=" icon-icons142"></i>
             <ul>
@@ -78,7 +78,7 @@
                 <h4>Email Address</h4>
               </li>
               <li>
-                <p><a href="#">info@ideahomes.com</a></p>
+                <p><a href="#">info@dhs.com</a></p>
               </li>
             </ul>
           </div>

@@ -2522,6 +2522,7 @@ nav.navbar.bootsnav.sticked .social-icons {
 
 #home_icon .col-md-2 {
     padding: 0;
+    width: 234px;
 }
 #home_icon .home_feature {
     background: transparent;

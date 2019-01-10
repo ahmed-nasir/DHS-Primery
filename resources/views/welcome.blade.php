@@ -6,7 +6,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-12">
-          <p class="p-font-15 p-white">Developer House Solution</p>
+          <p class="p-font-15 p-white"><a href="/">Developer House Solution</a></p>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-12 text-right">
           <div class="header-top-links">
@@ -14,13 +14,10 @@
               <li><a href="{{ route('about') }}"><i class="icon-heart2"></i>About Us</a></li>
               <li class="af-line"></li>
               <li><a href="{{route('contact')}}"><i class="icon-icons215"></i>Contact Us</a></li>
-
               @guest
               <li><a href="{{route('login')}}" class="header-login"><i class="icon-icons179"></i>Login</a></li>
-              <li><a href="{{route('register')}}" class="header-login"><i class="icon-icons179"></i>Register</a></li>
-              
+              <li><a href="{{route('register')}}" class="header-login"><i class="icon-icons179"></i>Register</a></li> 
               @else
-
               <li class="nav-item dropdown">
                                 <a class="header-login" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre >
                                      <span><i class="icon-icons179"></i>{{ Auth::user()->name }}</span>
@@ -340,21 +337,8 @@
   <div id="rev_full" class="rev_slider"  data-version="5.0">
     <ul>
       <!-- SLIDE  -->
-      <li data-transition="fade">
-        <img src="{{asset('assets/frontend/video/thumb.jpg')}}"  alt="video slide"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
-            <div class="rs-background-video-layer" 
-             data-volume="mute" 
-             data-videowidth="100%" 
-             data-videoheight="100%" 
-             data-videomp4="video/video.mp4" 
-             data-videopreload="preload" 
-             data-videoloop="loop" 
-             data-forceCover="1" 
-             data-aspectratio="16:9" 
-             data-autoplay="true" 
-             data-autoplayonlyfirsttime="true" 
-             data-nextslideatend="true">
-            </div>
+      <li data-transition="crossfade">
+        <img src="{{asset('assets/frontend/images/slide1.jpg')}}"  alt="" data-bgposition="center center" data-bgfit="cover" class="rev-slidebg">
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
           data-y="['290','230','170','170']" data-voffset="['0','0','0','0']"
@@ -365,7 +349,7 @@
           data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
-          <h2 class="border_heading p-white"> We Complete Your Dreams </h2>
+          <h2 class="border_heading p-white" style="color: #ed2a28"> DEVELOPRES HOUSE SOLUTION </h2>
         </div>
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
@@ -392,8 +376,21 @@
           data-start="800">
         </div>
       </li>
-      <li data-transition="crossfade">
-        <img src="{{asset('assets/frontend/images/slide1.jpg')}}"  alt="" data-bgposition="center center" data-bgfit="cover" class="rev-slidebg">
+      <li data-transition="fade">
+        <img src="{{asset('assets/frontend/images/slide0.jpg')}}"  alt="video slide"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
+            <div class="rs-background-video-layer" 
+             data-volume="mute" 
+             data-videowidth="100%" 
+             data-videoheight="100%" 
+             data-videomp4="video/video.mp4" 
+             data-videopreload="preload" 
+             data-videoloop="loop" 
+             data-forceCover="1" 
+             data-aspectratio="16:9" 
+             data-autoplay="true" 
+             data-autoplayonlyfirsttime="true" 
+             data-nextslideatend="true">
+            </div>
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
           data-y="['290','230','170','170']" data-voffset="['0','0','0','0']"
@@ -404,7 +401,7 @@
           data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
-          <h2 class="border_heading p-white"> We Complete Your Dreams </h2>
+        <h2 class="border_heading p-white">WE FULFIL YOUR DREAM.</h2>
         </div>
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
@@ -501,13 +498,13 @@
           <p>Near the beach</p>
         </a>
       </div>
-      <div class="col-md-2 col-sm-4 col-xs-12 text-center">
+{{--       <div class="col-md-2 col-sm-4 col-xs-12 text-center">
         <a href="news_details.html" class="home_feature">
           <i class="icon-stats-dots"></i>
           <h4>Reduced</h4>
           <p>Price reduced</p>
         </a>
-      </div>
+      </div> --}}
       <div class="col-md-2 col-sm-4 col-xs-12 text-center">
         <a href="listing_3.html" class="home_feature">
           <i class="icon-icons185"></i>
@@ -544,7 +541,7 @@
       </div>
       <div class="col-sm-1 col-md-2"></div>
     </div>
-    <div class="row">
+{{--     <div class="row">
       <div class="col-md-3 col-sm-3 col-xs-12 text-center">
         <div class="welcome top40">
           <img src="images/wellcome_1.png" alt="image">
@@ -569,7 +566,7 @@
           <h4>Free Inspection</h4>
         </div>
       </div>
-    </div>
+    </div> --}}
   </div>
 </section>
 @endsection
@@ -639,7 +636,7 @@
 
 @section('advance_search')
 <!-- PROPERTY SEARCH -->
-<section id="property-search-sev" class="property-query-area property-page-bg padding parallaxie">
+<section id="property-search-sev" class="property-query-area property-page-bg padding parallaxie" style="background-image: url({{asset('assets/frontend/images/search-property.jpg')}});">
   <div class="container">
     <div class="row">
       <div class="col-md-12 bottom40">
@@ -649,60 +646,46 @@
         <div class="line_3"></div>
       </div>
     </div>
-    <form action="" method="" class="findus">
+    <form action="{{ route('property-by-search') }}" method="POST" class="findus">
+      @csrf
       <div class="row">
         <div class="col-md-3 col-sm-3">
           <div class="single-query form-group">
             <label>Keyword</label>
-            <input type="text" class="keyword-input" placeholder="Any" required>
+            <input type="text" name="key" class="keyword-input" placeholder="Any">
           </div>
         </div>
         <div class="col-md-3 col-sm-3">
           <div class="single-query form-group">
               <label>Location</label>
-              <select class="selectpicker" data-live-search="true">
+              <select class="selectpicker" data-live-search="true" name="location">
                 <option selected="" value="any">Any</option>
-                <option>Location - 1</option>
-                <option>Location - 2</option>
-                <option>Location - 3</option>
-                <option>Location - 4</option>
-              </select>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-3">
-          <div class="single-query form-group">
-              <label>Property Type</label>
-              <select class="selectpicker" data-live-search="true">
-                <option class="active">Any</option>
-                <option>Property Type - 1</option>
-                <option>Property Type - 2</option>
-                <option>Property Type - 3</option>
-                <option>Property Type - 4</option>
+                <option>Dhaka</option>
+                <option>Sylet</option>
+                <option>Maymansing</option>
+                <option>Savar</option>
               </select>
           </div>
         </div>
         <div class="col-md-3 col-sm-3">
           <div class="single-query form-group">
               <label>Property Status</label>
-              <select class="selectpicker" data-live-search="true">
+              <select class="selectpicker" data-live-search="true" name="status">
                 <option class="active">Any</option>
-                <option>Property Status - 1</option>
-                <option>Property Status - 2</option>
-                <option>Property Status - 3</option>
-                <option>Property Status - 4</option>
+                <option>For Sell</option>
+                <option>For Rent</option>
               </select>
           </div>
         </div>
       </div>
       <div class="search-2">
-        <form class="findus">
           <div class="row">
             <div class="col-md-6">
               <div class="row">
                 <div class="col-md-3 col-sm-3">
                   <div class="single-query form-group">
                       <label>Bed Room</label>
-                      <select class="selectpicker" data-live-search="true">
+                      <select class="selectpicker" data-live-search="true" name="bedroom">
                         <option class="active">Any</option>
                         <option>1</option>
                         <option>2</option>
@@ -716,7 +699,7 @@
                 <div class="col-md-3 col-sm-3">
                   <div class="single-query form-group">
                       <label>Bath Room</label>
-                      <select class="selectpicker" data-live-search="true">
+                      <select class="selectpicker" data-live-search="true" name="bathroom">
                         <option class="active">Any</option>
                         <option>1</option>
                         <option>2</option>
@@ -730,35 +713,13 @@
                 <div class="col-md-3 col-sm-3">
                   <div class="single-query form-group">
                     <label>Squre Fit Min</label>
-                    <input type="text" class="keyword-input" placeholder="Any">
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                  <div class="single-query form-group">
-                    <label>Squre Fit Max</label>
-                    <input type="text" class="keyword-input" placeholder="Any">
+                    <input type="text" class="keyword-input" placeholder="Any" name="sqf">
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="row">
-{{--                 <div class="col-md-7 col-sm-6">
-                  <div class="single-query-slider top10 bottom10">
-                    <label>Price Range:</label>
-                    <div class="price text-right">
-                      <span>$</span>
-                      <div class="leftLabel"></div>
-                      <span>to $</span>
-                      <div class="rightLabel"></div>
-                    </div>
-                    <div data-range_min="0" data-range_max="500" data-cur_min="0" data-cur_max="2000" class="nstSlider">
-                      <div class="bar"></div>
-                      <div class="leftGrip"></div>
-                      <div class="rightGrip"></div>
-                    </div>
-                  </div>
-                </div> --}}
                 <div class="col-md-5 col-sm-6 text-right">
                   <div class="query-submit-button top10">
                     <input type="submit" class="btn_fill" value="Search">
@@ -767,77 +728,8 @@
               </div>
             </div>
           </div>
-        </form>
       </div>
     </form>
-
-{{--     <div class="row">
-      <div class="col-md-12">
-        <div class="group-button-search">
-          <a data-toggle="collapse" href=".search-propertie-filters" class="more-filter">
-            <i class="fa fa-plus text-1" aria-hidden="true"></i><i class="fa fa-minus text-2 hide" aria-hidden="true"></i>
-            <div class="text-1">Show more options</div>
-            <div class="text-2 hide">Show less options</div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="search-propertie-filters collapse">
-      <div class="container-2">
-        <div class="row">
-          <div class="col-md-3 col-sm-3 col-xs-3">
-            <div class="search-form-group white">
-              <input type="checkbox" name="check-box" />
-              <span>Wifi</span>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-3">
-            <div class="search-form-group white">
-              <input type="checkbox" name="check-box" />
-              <span>Park</span>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-3">
-            <div class="search-form-group white">
-              <input type="checkbox" name="check-box" />
-              <span>Schools</span>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-3">
-            <div class="search-form-group white">
-              <input type="checkbox" name="check-box" />
-              <span>Grounds</span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 col-sm-3 col-xs-3">
-            <div class="search-form-group white">
-              <input type="checkbox" name="check-box" />
-              <span>Masque</span>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-3">
-            <div class="search-form-group white">
-              <input type="checkbox" name="check-box" />
-              <span>Hospitals</span>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-3">
-            <div class="search-form-group white">
-              <input type="checkbox" name="check-box" />
-              <span>Transport</span>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-3">
-            <div class="search-form-group white">
-              <input type="checkbox" name="check-box" />
-              <span>Security</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> --}}
   </div>
 </section>
 <!-- PROPERTY SEARCH --> 
@@ -845,59 +737,7 @@
 
 
 @section('recent_property')
-<section id="agent-p-2" class="property-details bg_light padding">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 bottom40">
-        <h2 class="text-uppercase">Recent <span class="color_red">PROPERTY</span></h2>
-        <div class="line_1"></div>
-        <div class="line_2"></div>
-        <div class="line_3"></div>
-        <p class="margin-t-20">Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing
-          <br>vitae est. Sed nec felis pellentesque, lacinia dui sed, ultricies sapien.
-        </p>
-      </div>
-    </div>
-    <div class="col-md-12">
-      <div class="row">
-        <div id="property-2-slider" class="owl-carousel">
-            @foreach($properties as $property)
-            <div class="item">
-              <div class="property_item bottom40">
-                <div class="image">
-                  <img src="{{asset('assets/frontend/images/property-listing-1.jpg')}}" alt="listin" class="img-responsive">
-                  <div class="property_meta">
-                    <span><i class="fa fa-object-group"></i>{{ $property->property_area }} sq ft </span>
-                    <span><i class="fa fa-bed"></i>{{ $property->property_bedroom }} Bed Room</span>
-                    <span><i class="fa fa-bath"></i>{{ $property->property_bathroom }} Bathroom</span>
-                  </div>
-                  <div class="price"><span class="tag">For {{ $property->property_status }}</span></div>
-                  <div class="overlay">
-                    <div class="centered"><a class="link_arrow white_border" href="route('property.details', $property->id)">View Detail</a></div>
-                  </div>
-                </div>
-                <div class="proerty_content">
-                  <div class="proerty_text">
-                    <h3><a href="property_details_1.html">House in New York City</a></h3>
-                    <span class="bottom10">Merrick Way, Miami, USA</span>
-                    <p><strong>$8,600 Per Month</strong></p>
-                  </div>
-                  <div class="favroute clearfix">
-                    <p class="pull-left"><i class="icon-calendar2"></i> 3 Days ago</p>
-                    <ul class="pull-right">
-                      <li><a href="#."><i class="icon-video"></i></a></li>
-                      <li><a href="#."><i class="icon-like"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            @endforeach
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 @endsection
 
 @section('experts')
@@ -918,7 +758,7 @@
       <div class="col-md-4">
         <div class="team-member top40 text-center">
           <div class="team-img">
-            <img src="images/t-s-1.jpg" alt="">
+            <img src="{{asset('assets/frontend/images/CEO.JPG')}}" alt="">
           </div>
           <div class="team-hover">
             <div class="desk">
@@ -933,14 +773,14 @@
           </div>
         </div>
         <div class="team-title top20 text-center">
-          <h3>Martin Smith</h3>
+          <h3>Nasir Ahmmed</h3>
           <span>Founder & CEO</span>
         </div>
       </div>
       <div class="col-md-4">
         <div class="team-member top40 text-center">
           <div class="team-img">
-            <img src="images/t-s-2.jpg" alt="">
+            <img src="{{asset('assets/frontend/images/CEO.JPG')}}" alt="">
           </div>
           <div class="team-hover">
             <div class="desk">
@@ -955,14 +795,14 @@
           </div>
         </div>
         <div class="team-title top20 text-center">
-          <h3>Franklin Harbet</h3>
+          <h3>Pavel Sarker</h3>
           <span>Civil Engineer</span>
         </div>
       </div>
       <div class="col-md-4">
         <div class="team-member top40 text-center">
           <div class="team-img">
-            <img src="images/t-s-3.jpg" alt="">
+            <img src="{{asset('assets/frontend/images/CEO.JPG')}}" alt="">
           </div>
           <div class="team-hover">
             <div class="desk">
@@ -979,29 +819,6 @@
         <div class="team-title top20 text-center">
           <h3>Linda Anderson</h3>
           <span>Marketing Manager</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-@endsection
-
-@section('partners')
-<section id="our-partner" class="padding">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div id="partner_slider" class="owl-carousel">
-          <div class="item"><img src="images/partner-1.png" alt="Our Partner"></div>
-          <div class="item"><img src="images/partner-2.png" alt="Our Partner"></div>
-          <div class="item"><img src="images/partner-3.png" alt="Our Partner"></div>
-          <div class="item"><img src="images/partner-4.png" alt="Our Partner"></div>
-          <div class="item"><img src="images/partner-5.png" alt="Our Partner"></div>
-          <div class="item"><img src="images/partner-1.png" alt="Our Partner"></div>
-          <div class="item"><img src="images/partner-2.png" alt="Our Partner"></div>
-          <div class="item"><img src="images/partner-3.png" alt="Our Partner"></div>
-          <div class="item"><img src="images/partner-4.png" alt="Our Partner"></div>
-          <div class="item"><img src="images/partner-5.png" alt="Our Partner"></div>
         </div>
       </div>
     </div>

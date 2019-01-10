@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<title>IDEA HOMES | PROPERTY DETAILS </title>
+<title>DHS | CONTACT US </title>
 <link rel="stylesheet" type="text/css" href="{{asset('assets/frontend/css/master.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/frontend/css/color.css')}}">
 <link rel="shortcut icon" href="{{asset('assets/frontend/images/short_icon.png')}}">
@@ -12,7 +12,9 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
+    <style>
+      
+    </style>
 </head>
 
 <body>
@@ -208,11 +210,11 @@
     <div class="row border-bottom">
       <div class="col-sm-6 col-md-3">
         <div class="widget dark"> <img class="mt-5 mb-20" alt="" src="{{asset('assets/frontend/images/logo-2.png')}}">
-          <p>203, Name Labs, Behind Alis Steet, Melbourne, City Name.</p>
+          <p>Uttara, Dhaka, Bangladesh.</p>
           <ul class="list-inline mt-5">
-            <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">123-456-789</a> </li>
-            <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">contact@yourdomain.com</a> </li>
-            <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">www.yourdomain.com</a> </li>
+            <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">123-456-789</a> </li><br>
+            <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">dhs@gmail.com</a> </li>
+            <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">www.dhs.com</a> </li>
           </ul>
         </div>
       </div>
@@ -285,8 +287,8 @@
       <div class="col-md-3 col-sm-4">
         <div class="widget dark">
           <h5 class="widget-title mb-10">Call Us Now</h5>
-          <div class="text-gray"> +61 3 1234 5678 <br>
-            +12 3 1234 5678 </div>
+          <div class="text-gray"> +8801677390769 <br>
+            +8801689044066 </div>
         </div>
       </div>
       <div class="col-md-3 col-sm-4">
@@ -315,7 +317,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-sm-5">
-          <p class="font-11 text-black-777 m-0 copy-right">Copyright: 2018 <a href="#."><span class="color_red">IDEA HOMES</span></a>. All Rights Reserved</p>
+          <p class="font-11 text-black-777 m-0 copy-right">Copyright: 2019 <a href="#."><span class="color_red">DEVELOPERS HOUSE SOLUTION</span></a>. All Rights Reserved</p>
         </div>
         <div class="col-md-6 col-sm-7 text-right">
           <div class="widget no-border m-0">

@@ -138,9 +138,10 @@
             </div>
             <div class="col-md-6 col-sm-4 text-right">
                 <div class="mb20">
-                    <form class="padding-top-30">
-                        <input class="search" placeholder="Enter your Email" type="search">
-                        <a href="#" class="button"><i class="icon-mail-envelope-open"></i></a>
+                    <form action="{{ route('subscribe') }}" method="POST" class="padding-top-30">
+                        @csrf
+                        <input class="search" placeholder="Your Email To Subscribe" type="email" name="email">
+                        <button type="submit" class="button"><i class="icon-mail-envelope-open"></i></butthon>
                     </form>
                 </div>
             </div>
@@ -150,7 +151,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-5">
-                    <p class="font-11 text-black-777 m-0 copy-right">Copyright: 2018 <a href="#"><span class="color_red">IDEA HOMES</span></a>. All Rights Reserved</p>
+                    <p class="font-11 text-black-777 m-0 copy-right">Copyright: 2018 <a href="#"><span class="color_red">Developer House Solution</span></a>. All Rights Reserved</p>
                 </div>
                 <div class="col-md-6 col-sm-7 text-right">
                     <div class="widget no-border m-0">

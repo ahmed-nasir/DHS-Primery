@@ -22,6 +22,9 @@ Route::get('/', 'HomeController@index')->name('welcome');
 Route::get("property/details/{id}", "HomeController@showPropertyDetails")->name('property.details');
 Route::get('contactus','HomeController@contactus')->name('contact');
 Route::get('aboutus','HomeController@aboutus')->name('about');
+Route::post('property-by-search','HomeController@propertyBySearch')->name('property-by-search');
+
+Route::post('subscribe','SubscriberController@subscribe')->name('subscribe');
 
 
 Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth','admin']],function(){
@@ -30,6 +33,11 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin', 'middlewar
 
 	Route::put('property/{property}/approve','PropertyController@approve')->name('property.approve');
 	Route::get('profile','DashboardController@profile')->name('profile');
+
+	Route::get('allsubscriber','DashboardController@allsubscriber')->name('property.subscriber');
+	Route::get('alluser','DashboardController@alluserMethod')->name('our.user');
+	Route::delete('/subscriber/{id}/delete','DashboardController@deletesubscriber')->name('subscriber.delete');
+
 });
 
 Route::group(['as'=>'user.','prefix'=>'user', 'namespace'=>'User', 'middleware'=>['auth','user']],function(){
