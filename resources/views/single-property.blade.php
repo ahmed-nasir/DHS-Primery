@@ -17,7 +17,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<title>IDEA HOMES | PROPERTY DETAILS </title>
+<title>{{$title->sitetitle}}</title>
 <link rel="stylesheet" type="text/css" href="{{asset('assets/frontend/css/master.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/frontend/css/color.css')}}">
 <link rel="shortcut icon" href="{{asset('assets/frontend/images/short_icon.png')}}">
@@ -639,7 +639,7 @@
     </div>
   </div>
 </section>
-<section id="agent-p-2" class="property-details padding">
+{{-- <section id="agent-p-2" class="property-details padding">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 bottom40">
@@ -840,7 +840,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 <!-- PROPERTY DETAILS -->
 
     

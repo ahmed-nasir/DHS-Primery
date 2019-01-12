@@ -128,7 +128,8 @@ h5 {
     color: #fff;
 }
 .p-white {
-    color: #fff;
+color: #fff;
+    font-size: 26px;
 }
 .color_black {
     color: #000;
@@ -1375,7 +1376,7 @@ figure.effect-layla .main-title {
 
 #header-top {
     background: #313030;
-    padding: 10px 0;
+    padding: 24px 0;
 }
 .bor_nav {
     border-top: 1px solid #dbdbdb;
@@ -1635,8 +1636,8 @@ nav.navbar.bootsnav.navbar-sticky .navbar-brand {
 }
 nav.navbar.bootsnav.sticked .navbar-brand {
     display: inline-block;
-    padding: 10px 0;
-    width: 100px;
+    padding: 1px 0;
+    /* width: 209px; */
 }
 nav.navbar.bootsnav.sticked .navbar-nav {
     float: right;

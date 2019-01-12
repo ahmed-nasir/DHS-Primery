@@ -38,6 +38,10 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin', 'middlewar
 	Route::get('alluser','DashboardController@alluserMethod')->name('our.user');
 	Route::delete('/subscriber/{id}/delete','DashboardController@deletesubscriber')->name('subscriber.delete');
 
+	Route::get('sitetitle', 'DashboardController@sitetitle')->name('sitetitle');
+	Route::get('changetitle', 'DashboardController@change')->name('sitetitle.change');
+	Route::put('changesitetitle', 'DashboardController@changesitetitle')->name('changesitetitle');
+
 });
 
 Route::group(['as'=>'user.','prefix'=>'user', 'namespace'=>'User', 'middleware'=>['auth','user']],function(){
@@ -46,4 +50,6 @@ Route::group(['as'=>'user.','prefix'=>'user', 'namespace'=>'User', 'middleware'=
 	Route::resource('property','PropertyController');
 	Route::get('profile','DashboardController@profile')->name('profile');
 });
+
+
 

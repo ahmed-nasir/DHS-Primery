@@ -5,11 +5,15 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Notifications\UserPostNotifyToAdmin;
 use App\Post;
+use App\Post_image;
 use App\User;
 use Brian2694\Toastr\Facades\Toastr;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class PropertyController extends Controller
 {
@@ -54,6 +58,7 @@ class PropertyController extends Controller
             'property_status' => 'required',
             'property_price' => 'required',
             'property_year_built' => 'required',
+            'images' => 'required'
         ]);
 
 
@@ -61,7 +66,7 @@ class PropertyController extends Controller
 
         $post->property_title = $request->property_title;
         $post->property_price = $request->property_price;
-        $post->is_approve = $request->is_approve;
+        // $post->is_approve = $request->is_approve;
         $post->property_year_built = $request->property_year_built;
 
         if($request->property_publication_status == true){
@@ -86,6 +91,27 @@ class PropertyController extends Controller
 
         $users = User::where('role_id','1')->get();
         Notification::send($users, new UserPostNotifyToAdmin($post));
+        $currentId = $post->id;
+
+        if ($request->hasFile('images')) {
+            //check the images folder is exist or not
+            if (!Storage::disk('public')->exists('propertyImages')) {
+                Storage::disk('public')->makeDirectory('propertyImages');
+            }
+            $image_array = $request->file('images');
+            $array_len = count($image_array);
+            for ($i=0; $i < $array_len ; $i++) { 
+
+                $currentDate = Carbon::now()->toDateString();
+                $imagename = $currentDate.'-'.uniqid().'.'.$image_array[$i]->getClientOriginalExtension();
+                $postimage = Image::make($image_array[$i])->resize(500,500)->stream();
+                Storage::disk('public')->put('propertyImages/'.$imagename, $postimage);
+                $img = new Post_image();
+                $img->name = $imagename;
+                $img->post_id = $currentId;
+                $img->save();
+            }
+        }
 
         Toastr::success('Post successfully inserted.','success');
         return redirect()->route('user.property.index');

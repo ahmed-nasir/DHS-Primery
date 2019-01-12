@@ -3,7 +3,7 @@
 @section('content')
 <div class="login-box">
     <div class="logo">
-        <a href="javascript:void(0);">Admin<b>DHS</b></a>
+        <a href="javascript:void(0);"><b>LOGIN</b></a>
        <!--  <small>Admin BootStrap Based - Material Design</small> -->
     </div>
     <div class="card">

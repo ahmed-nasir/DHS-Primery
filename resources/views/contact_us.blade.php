@@ -127,14 +127,14 @@
               
           <div class="agent-p-contact p-t-30">
             <div class="agetn-contact-2">
-              <p><i class="icon-telephone114"></i> (+01) 34 56 7890</p>
+              <p><i class="icon-telephone114"></i> +8801677393743</p>
               <a href="#.">
-                <p><i class=" icon-icons142"></i> info@ideahomes.com</p>
+                <p><i class=" icon-icons142"></i> info@dhs.com</p>
               </a>
               <a href="#.">
-                <p><i class="icon-browser2"></i>www.ideahomes.com</p>
+                <p><i class="icon-browser2"></i>www.dhs.com</p>
               </a>
-              <p><i class="icon-icons74"></i> Idea Homes, Merrick Way, FL 12345 Australia</p>
+              <p><i class="icon-icons74"></i> Amin Model town, Savar, Dhaka</p>
             </div>
             <ul class="socials">
               <li><a href="#."><i class="fa fa-facebook"></i></a></li>
@@ -210,7 +210,7 @@
     <div class="row border-bottom">
       <div class="col-sm-6 col-md-3">
         <div class="widget dark"> <img class="mt-5 mb-20" alt="" src="{{asset('assets/frontend/images/logo-2.png')}}">
-          <p>Uttara, Dhaka, Bangladesh.</p>
+          <p>Model town, Asulia, Savar.</p>
           <ul class="list-inline mt-5">
             <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">123-456-789</a> </li><br>
             <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">dhs@gmail.com</a> </li>
@@ -303,14 +303,15 @@
           </ul>
         </div>
       </div>
-      <div class="col-md-6 col-sm-4 text-right">
-        <div class="mb20">
-          <form class="padding-top-30">
-            <input class="search" placeholder="Enter your Email" type="search">
-            <a href="#." class="button"><i class="icon-mail-envelope-open"></i></a>
-          </form>
-        </div>
-      </div>
+            <div class="col-md-6 col-sm-4 text-right">
+                <div class="mb20">
+                    <form action="{{ route('subscribe') }}" method="POST" class="padding-top-30">
+                        @csrf
+                        <input class="search" placeholder="Your Email To Subscribe" type="email" name="email">
+                        <button type="submit" class="button"><i class="icon-mail-envelope-open"></i></butthon>
+                    </form>
+                </div>
+            </div>
     </div>
   </div>
   <div class="footer-bottom bg-black-333">
@@ -344,12 +345,12 @@
       
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h2 class="modal-title" id="myModalLabel">How can <span class="color_red">we help?</span></h2>
+        <h2 class="modal-title" id="myModalLabel">How can <span class="color_red">we help?</span></h2>The mission of Developers House Solution is to be the most successful real estate firm in Bangladesh River County. Developers House Solution Real Estate incorporates proven, professional state of-the-art techniques specializing in the marketing, listing and selling of new and resale luxury homes, residential communities, condominiums, home sites, undeveloped land and commercial and investment opportunities. Developers House Solution maintains a full-time staff of well-trained real estate professionals who continually strive to provide top quality service for their individual clients and customers. Developers House Solution is a creative, innovative and people-oriented organization providing individual opportunity, personal satisfaction and rewarding challenges to all members of the firm.
       </div>
 
       <div class="modal-body">
 
-        <p class="bottom40">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p class="bottom40"></p>
 
         <div class="short-msg-tab"> 
           <!-- Nav tabs -->

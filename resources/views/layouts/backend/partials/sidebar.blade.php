@@ -72,6 +72,12 @@
                                 <span>Profile</span>
                             </a>
                         </li>
+                        <li class="{{ Request::is('admin/sitetitle*')?'active' : ''}}">
+                            <a href="{{ route('admin.sitetitle') }}">
+                                <i class="material-icons">brush</i>
+                                <span>Site Title</span>
+                            </a>
+                        </li>
                     @elseif(Request::is('user*'))
                         <li class="{{ Request::is('user/dashboard') ? 'active' : ''}}">
                             <a href="{{ route('user.dashboard') }}">
@@ -91,6 +97,7 @@
                                 <span>Profile</span>
                             </a>
                         </li>
+
                     @endif
 
                 </ul>

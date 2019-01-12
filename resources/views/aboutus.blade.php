@@ -75,7 +75,7 @@
             <div class="line_1-1"></div>
             <div class="line_2-2"></div>
             <div class="line_3-3"></div>
-            <p class="heading_space">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p class="heading_space">The mission of Developers House Solution is to be the most successful real estate firm in Bangladesh River County. Developers House Solution Real Estate incorporates proven, professional state of-the-art techniques specializing in the marketing, listing and selling of new and resale luxury homes, residential communities, condominiums, home sites, undeveloped land and commercial and investment opportunities. </p>
           </div>
           <div class="col-sm-1 col-md-2"></div>
         </div>
@@ -84,15 +84,15 @@
 
             <div class="col-md-7 col-sm-7 col-xs-12">
                 <div class="our-mission-box-detail">
-                  <h3>About Us Idea Homes Real Estate</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <ul>
+                  <h3>About Us Developer House Solution</h3>
+                    <p>Developers House Solution maintains a full-time staff of well-trained real estate professionals who continually strive to provide top quality service for their individual clients and customers. Developers House Solution is a creative, innovative and people-oriented organization providing individual opportunity, personal satisfaction and rewarding challenges to all members of the firm.</p>
+                    {{-- <ul>
                       <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</li>
                         <li>Ut enim ad minim veniam, quis nostrud exercitation</li>
                         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</li>
                         <li>Ut enim ad minim veniam, quis nostrud exercitation</li>
                         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
 
@@ -320,9 +320,9 @@
     <div class="row border-bottom">
       <div class="col-sm-6 col-md-3">
         <div class="widget dark"> <img class="mt-5 mb-20" alt="" src="{{asset('assets/frontend/images/logo-2.png')}}">
-          <p>Uttara,Dhaka, Bangladesh</p>
+          <p>Model town, Asulia, Savar.</p>
           <ul class="list-inline mt-5">
-            <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">123-456-789</a> </li>
+            <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">123-456-789</a> </li><br>
             <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">dhs@gmail.com</a> </li>
             <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-theme-color-2 mr-5"></i> <a class="text-gray" href="#.">www.dhs.com</a> </li>
           </ul>

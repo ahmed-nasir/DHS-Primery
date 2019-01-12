@@ -6,7 +6,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-12">
-          <p class="p-font-15 p-white"><a href="/">We are Best in Town With 40 years of Experience.</a></p>
+          <p class="p-font-15 p-white"><a href="/">{{$title->sitetitle}}</a></p>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-12 text-right">
           <div class="header-top-links">
@@ -55,7 +55,7 @@
 @endsection
 @section('slider')
 <!-- Navbar on Click -->
-<div class="sidebar_menu">
+{{-- <div class="sidebar_menu">
   <nav class="pushmenu pushmenu-left">
     <a class="push-logo" href="index.html"><img src="{{asset('assets/frontend/images/short_icon.png')}}" alt="logo"></a>
     <ul class="push_nav bottom20">
@@ -326,7 +326,7 @@
       <li><a href="#"><i class="fa fa-instagram"></i></a></li>
     </ul>
   </nav>
-</div>
+</div> --}}
 <div id="menu_bars" class="left">
     <span class="t1"></span>
     <span class="t2"></span>
@@ -545,7 +545,6 @@
     </div>
     <div class="row">
     @if ($property)
-      {{-- expr --}}
     @foreach($property as $pro)
     <div class="col-md-4 col-sm-6">
       <div class="property_item bottom40">
@@ -623,7 +622,7 @@
           <div class="single-query form-group">
               <label>Location</label>
               <select class="selectpicker" data-live-search="true" name="location">
-                <option selected="" value="any">Any</option>
+                {{-- <option selected="" value="any">Any</option> --}}
                 <option>Chittagon</option>
                 <option>Dhaka</option>
                 <option>Savar</option>
@@ -647,7 +646,7 @@
           <div class="single-query form-group">
               <label>Property Status</label>
               <select class="selectpicker" data-live-search="true" name="status">
-                <option class="active">Any</option>
+                {{-- <option class="active">Any</option> --}}
                 <option>Sell</option>
                 <option>Rent</option>
               </select>
@@ -662,7 +661,7 @@
                   <div class="single-query form-group">
                       <label>Bed Room</label>
                       <select class="selectpicker" data-live-search="true" name="bedroom">
-                        <option class="active">Any</option>
+                        {{-- <option class="active">Any</option> --}}
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -676,7 +675,7 @@
                   <div class="single-query form-group">
                       <label>Bath Room</label>
                       <select class="selectpicker" data-live-search="true" name="bathroom">
-                        <option class="active">Any</option>
+                        {{-- <option class="active">Any</option> --}}
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>

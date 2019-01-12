@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Property;
+use App\Sitetitle;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,38 +16,43 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $properties = Post::latest()->paginate(6);
-        return view('welcome',compact('properties'));
+        $title = Sitetitle::find(1);
+        $properties = Post::where('is_approve', true)->latest()->paginate(6);
+        return view('welcome',compact('properties','title'));
     }
 
 
     public function showPropertyDetails($id){
        
         $property = Post::find($id);
-        
-        return view('single-property',compact('property'));
+        $title = Sitetitle::find(1);
+        return view('single-property',compact('property','title'));
     }
 
     // public function showUserLogin(){
     //     return view('userLogin');
     // }
     public function contactus(){
-        return view('contact_us');
+        $title = Sitetitle::find(1);
+        return view('contact_us', compact('title'));
     }
 
     public function aboutus(){
-        return view('aboutus');
+        $title = Sitetitle::find(1);
+        return view('aboutus', compact('title'));
     }
 
     public function propertyBySearch(Request $request){
-        $this->validate($request, [
-            'key' => 'required',
-            'status' => 'required',
-            'location' => 'required',
-            'bedroom' => 'required',
-            'bathroom' => 'required',
-            'sqf' => 'required',
-        ]); 
+        //return $request;
+        $title = Sitetitle::find(1);
+        // $this->validate($request, [
+        //     'key' => 'required',
+        //     'status' => 'required',
+        //     'location' => 'required',
+        //     'bedroom' => 'required',
+        //     'bathroom' => 'required',
+        //     'sqf' => 'required',
+        // ]); 
 
         $key = $request->key;
         $type = $request->status;
@@ -57,12 +63,12 @@ class HomeController extends Controller
         // return $type;
         // exit();
         $property = Post::where('property_status', 'LIKE', "%$type%")
-                        ->orWhere('property_title', 'like', '%' . $key . '%')
-                        ->orWhere('property_bedroom', 'like', '%' . $bedroom . '%')
-                        ->orWhere('property_bathroom', 'like', '%' . $bathroom . '%')
-                        ->orWhere('property_address', 'like', '%' . $location . '%')
-                        ->orWhere('property_area', 'like', '%' . $sqf . '%')
+                        ->where('property_title', 'like', '%' . $key . '%')
+                        ->where('property_bedroom', 'like', '%' . $bedroom . '%')
+                        ->where('property_bathroom', 'like', '%' . $bathroom . '%')
+                        ->where('property_address', 'like', '%' . $location . '%')
+                        ->where('property_area', 'like', '%' . $sqf . '%')
                         ->orderBy('id')->paginate(6);
-        return view('propertybysearch', compact('property'));
+        return view('propertybysearch', compact('property', 'title'));
     }
 }

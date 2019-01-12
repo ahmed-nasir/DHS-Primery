@@ -6,7 +6,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-12">
-          <p class="p-font-15 p-white"><a href="/">Developer House Solution</a></p>
+          
+          <p class="p-font-15 p-white"><a href="/">{{$title->sitetitle}}</a></p>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-12 text-right">
           <div class="header-top-links">
@@ -54,172 +55,39 @@
 <!-- Navbar on Click -->
 <div class="sidebar_menu">
   <nav class="pushmenu pushmenu-left">
-    <a class="push-logo" href="index.html"><img src="{{asset('assets/frontend/images/short_icon.png')}}" alt="logo"></a>
+    <a class="push-logo" href="{{route('welcome')}}"><img src="{{asset('assets/frontend/images/short_icon.png')}}" alt="logo"></a>
     <ul class="push_nav bottom20">
       <li class="dropdown active">
-                <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Homes</a>
-                <ul class="dropdown-menu">
-                  <li><a href="index.html">Home V-1</a></li>
-                  <li><a href="index-2.html">Home V - 2</a></li>
-                  <li><a href="index-3.html">Home V - 3</a></li>
-                  <li><a href="index-4.html">Home V - 4</a></li>
-                  <li><a href="index-5.html">Home V - 5</a></li>
-                  <li><a href="index-6.html">Home V - 6</a></li>
-                  <li><a href="index-7.html">Home V - 7</a></li>
-                  <li class="active"><a href="index-8.html">Home V - 8</a></li>
-                  <li><a href="index-9.html">Home V - 9</a></li>
-                  <li><a href="index-10.html">Home V - 10</a></li>
-                  <li><a href="landing-page.html">Landing Page</a></li>
-                </ul>
+                <a href="{{route('welcome')}}">Homes</a>
+              
               </li>
               
               <li class="dropdown">
                 <a href="#." class="dropdown-toggle" data-toggle="dropdown">About Us</a>
-                <ul class="dropdown-menu">
-                  <li><a href="about.html">About Us V - 1</a></li>
-                  <li><a href="about-2.html">About Us V - 2</a></li>
-                  <li><a href="about-3.html">About Us V - 3</a></li>
-                </ul>
+                
               </li>
               
               <li class="dropdown">
-                <a href="#." class="dropdown-toggle" data-toggle="dropdown">Properties</a>
-                <ul class="dropdown-menu">
-                  <li class="dropdown">
-                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Property Listing</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="listing-1.html">Property Listing V - 1</a></li>
-                      <li><a href="listing-2.html">Property Listing V - 2</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Property Details</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="property-details-1.html">Property Details V - 1</a></li>
-                      <li><a href="property-details-2.html">Property Details V - 2</a></li>
-                      <li><a href="property-details-3.html">Property Details V - 3</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Creat New Property</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="submit-property.html">Creat New Property V - 1</a></li>
-                      <li><a href="submit-property-2.html">Creat New Property V - 2</a></li>
-                    </ul>
-                  </li>
-                </ul>
+                <a href="#." class="dropdown-toggle" data-toggle="dropdown">Properties</a>   
               </li>
               
               <li class="dropdown">
                 <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Agents</a>
-                <ul class="dropdown-menu">
-                  <li class="dropdown">
-                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Our Agents</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="agent-1.html">Our Agents V - 1</a></li>
-                      <li><a href="agent-2.html">Our Agents V - 2</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Agent Profiles</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="agent-profile-1.html">Agents Profile V - 1</a></li>
-                      <li><a href="agent-profile-2.html">Agents Profile V - 2</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Agent Listings</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="agent-listing.html">Agents Listings V - 1</a></li>
-                      <li><a href="agent-listing-2.html">Agents Listings V - 2</a></li>
-                    </ul>
-                  </li>
-                </ul>
+                
               </li>
               
               <li class="dropdown">
                 <a href="#." class="dropdown-toggle" data-toggle="dropdown">User Pages</a>
-                <ul class="dropdown-menu">
-                  <li><a href="user-profile.html">User Profile</a></li>
-                  <li><a href="my-properties.html">My Property</a></li>
-                  <li><a href="bookmark-properties.html">Bookmark Properties</a></li>
-                  <li><a href="create-agency.html">Create Account</a></li>
-                  <li><a href="login.html">User Login</a></li>
-                  <li><a href="login.html">User Register</a></li>
-                </ul>
+                
               </li>
               
               <li class="dropdown">
                 <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Pages</a>
-                <ul class="dropdown-menu">
-                  <li class="dropdown">
-                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Agency</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="agency-listing.html">Agency Listing</a></li>
-                      <li><a href="agency-details.html">Agency Deatil</a></li>
-                      <li><a href="create-agency.html">Creat New Agency</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Galleries</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="gallery-1.html">Gallery V - 1</a></li>
-                      <li><a href="gallery-2.html">Gallery V - 2</a></li>
-                      <li><a href="gallery-3.html">Gallery V - 3</a></li>
-                      <li><a href="gallery-4.html">Gallery V - 4</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Our Blogs</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="news-1.html">Our Blog V - 1</a></li>
-                      <li><a href="news-2.html">Our Blog V - 2</a></li>
-                      <li><a href="news-3.html">Our Blog V - 3</a></li>
-                      <li><a href="news-details.html">Blog Details</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Create Invoice</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="invoice-1.html">Create Invoice V - 1</a></li>
-                      <li><a href="invoice-2.html">Create Invoice V - 2</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >FAQ's</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="faq-1.html">FAQ's V - 1</a></li>
-                      <li><a href="faq-2.html">FAQ's V - 2</a></li>
-                      <li><a href="faq-3.html">FAQ's V - 3</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Timelines</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="timeline-1.html">Timeline V - 1</a></li>
-                      <li><a href="timeline-2.html">Timeline V - 2</a></li>
-                      <li><a href="timeline-3.html">Timeline V - 3</a></li>
-                    </ul>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#." class="dropdown-toggle" data-toggle="dropdown" >Error Pages</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="error-401.html">Error Page 401</a></li>
-                      <li><a href="error-403.html">Error Page 403</a></li>
-                      <li><a href="error-404.html">Error Page 404</a></li>
-                      <li><a href="error-500.html">Error Page 500</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="packages.html">Packages</a></li>
-                  <li><a href="testimonials.html">Testimonial</a></li>
-                  <li><a href="term&condition.html">Terms & Conditions</a></li>
-                  <li><a href="auto-loan-calculator.html">Loan Calculate</a></li>
-                </ul>
               </li>
               
               <li class="dropdown megamenu-fw">
                 <a href="#." class="dropdown-toggle" data-toggle="dropdown">Showcase</a>
-                <ul class="dropdown-menu megamenu-content" role="menu">
+{{--                 <ul class="dropdown-menu megamenu-content" role="menu">
                   <li>
                    <div class="row">
                       <div class="col-menu col-md-2">
@@ -302,17 +170,11 @@
                       </div>
                     </div>
                   </li>
-                </ul>
+                </ul> --}}
               </li>
               
               <li class="dropdown">
                 <a href="#." class="dropdown-toggle" data-toggle="dropdown">Contact Us</a>
-                <ul class="dropdown-menu">
-                  <li><a href="contact-us.html">Contact Us V - 1</a></li>
-                  <li><a href="contact-us-2.html">Contact Us V - 2</a></li>
-                  <li><a href="contact-us-3.html">Contact Us V - 3</a></li>
-                  <li><a href="contact-us-4.html">Contact Us V - 4</a></li>
-                </ul>
               </li>
     </ul>
     <div class="clearfix"></div>
@@ -338,7 +200,7 @@
     <ul>
       <!-- SLIDE  -->
       <li data-transition="crossfade">
-        <img src="{{asset('assets/frontend/images/slide1.jpg')}}"  alt="" data-bgposition="center center" data-bgfit="cover" class="rev-slidebg">
+        <img src="{{asset('assets/frontend/video/thumb.jpg')}}"  alt="" data-bgposition="center center" data-bgfit="cover" class="rev-slidebg">
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
           data-y="['290','230','170','170']" data-voffset="['0','0','0','0']"
@@ -361,8 +223,7 @@
           data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
-          <p class="p-white text-center">Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed
-           <br> varius at, adipiscing vitae est. Sed nec felis pellentesque</p>
+          <p class="p-white text-center">Find your new property online, Be happy</p>
         </div>
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
@@ -413,8 +274,7 @@
           data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
-          <p class="p-white text-center">Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed
-           <br> varius at, adipiscing vitae est. Sed nec felis pellentesque</p>
+          <h5 class="p-white text-center">Find your new property online, Be happy</h5>
         </div>
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
@@ -452,8 +312,7 @@
           data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" 
           data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"              
           data-start="800">
-          <p class="p-white text-center">Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed
-           <br> varius at, adipiscing vitae est. Sed nec felis pellentesque</p>
+          <p class="p-white text-center">Find your new property online, Be happy</p>
         </div>
         <div class="tp-caption tp-resizeme"               
           data-x="['center','center','center','center']" data-hoffset="['15','15','0','0']" 
@@ -609,7 +468,7 @@
             <p class="p-font-15">{{ str_limit($property->property_description,100)}}</p>
           </div>
           <div class="favroute clearfix">
-            <p class="pull-md-left">${{ $property->property_price}}</p>
+            <p class="pull-md-left">Tk. {{ $property->property_price}}/=</p>
             <ul class="pull-right">
               <li><a href="#."><i class="icon-video"></i></a></li>
               <li><a href="#."><i class="icon-like"></i></a></li>
@@ -659,7 +518,7 @@
           <div class="single-query form-group">
               <label>Location</label>
               <select class="selectpicker" data-live-search="true" name="location">
-                <option selected="" value="any">Any</option>
+                <option selected="" value="null">Any</option>
                 <option>Dhaka</option>
                 <option>Sylet</option>
                 <option>Maymansing</option>
@@ -671,9 +530,9 @@
           <div class="single-query form-group">
               <label>Property Status</label>
               <select class="selectpicker" data-live-search="true" name="status">
-                <option class="active">Any</option>
-                <option>For Sell</option>
-                <option>For Rent</option>
+                <option class="active" value="null">Any</option>
+                <option>Sell</option>
+                <option>Rent</option>
               </select>
           </div>
         </div>
@@ -686,7 +545,7 @@
                   <div class="single-query form-group">
                       <label>Bed Room</label>
                       <select class="selectpicker" data-live-search="true" name="bedroom">
-                        <option class="active">Any</option>
+                        <option class="active" value="null">Any</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -700,13 +559,17 @@
                   <div class="single-query form-group">
                       <label>Bath Room</label>
                       <select class="selectpicker" data-live-search="true" name="bathroom">
-                        <option class="active">Any</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
+                        <option class="active" value="null">Any</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
                       </select>
                   </div>
                 </div>
@@ -749,9 +612,9 @@
         <div class="line_1"></div>
         <div class="line_2"></div>
         <div class="line_3"></div>
-        <p>Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing
+     {{--    <p>Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing
           <br>vitae est. Sed nec felis pellentesque, lacinia dui sed, ultricies sapien.
-        </p>
+        </p> --}}
       </div>
     </div>
     <div class="row">
@@ -774,18 +637,18 @@
         </div>
         <div class="team-title top20 text-center">
           <h3>Nasir Ahmmed</h3>
-          <span>Founder & CEO</span>
+          <span>Web designer</span>
         </div>
       </div>
       <div class="col-md-4">
         <div class="team-member top40 text-center">
           <div class="team-img">
-            <img src="{{asset('assets/frontend/images/CEO.JPG')}}" alt="">
+            <img src="{{asset('assets/frontend/images/Developer.JPG')}}" alt="">
           </div>
           <div class="team-hover">
             <div class="desk">
-              <h4 class="bottom10">I love to desing</h4>
-              <p>I love to introduce myself as a hardcore Web Designer.</p>
+              <h4 class="bottom10">I love to development.</h4>
+              <p>I love to introduce myself as a hardcore Web Development.</p>
             </div>
             <div class="s-link">
               <a href="#." ><i class="fa fa-facebook"></i></a>
@@ -795,19 +658,19 @@
           </div>
         </div>
         <div class="team-title top20 text-center">
-          <h3>Pavel Sarker</h3>
-          <span>Civil Engineer</span>
+          <h3>Muhammad Pavel Sarker</h3>
+          <span>Web Developer</span>
         </div>
       </div>
       <div class="col-md-4">
         <div class="team-member top40 text-center">
           <div class="team-img">
-            <img src="{{asset('assets/frontend/images/CEO.JPG')}}" alt="">
+            <img src="{{asset('assets/frontend/images/Marketing.JPG')}}" alt="">
           </div>
           <div class="team-hover">
             <div class="desk">
-              <h4 class="bottom10">I love to desing</h4>
-              <p>I love to introduce myself as a hardcore Web Designer.</p>
+              <h4 class="bottom10">I love to marketing</h4>
+              <p>I love to introduce myself as a hardcore marketing manager.</p>
             </div>
             <div class="s-link">
               <a href="#." ><i class="fa fa-facebook"></i></a>

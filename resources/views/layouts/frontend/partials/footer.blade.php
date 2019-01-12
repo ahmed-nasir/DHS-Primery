@@ -7,7 +7,7 @@
           <i class="icon-telephone114"></i>
           <ul>
             <li><h4>Phone Number</h4></li>
-            <li><p>+1 900 234 567 - 68</p></li>
+            <li><p>+8801689044066</p></li>
           </ul>
         </div>
       </div>
@@ -16,9 +16,9 @@
           <i class="icon-icons74"></i>
           <ul>
             <li>
-              <h4>Victoria Hall,</h4>
+              <h4>Model Town</h4>
             </li>
-            <li><p>Idea Homes, australia</p></li>
+            <li><p>Ashulia,Savar</p></li>
           </ul>
         </div>
       </div>
@@ -27,7 +27,7 @@
           <i class="icon-icons142"></i>
           <ul>
             <li><h4 class="p-font-17">Email Address</h4></li>
-            <li><a href="#."><p>info@Idea-Homes.com</p></a></li>
+            <li><a href="#."><p>info@dhs.com</p></a></li>
           </ul>
         </div>
       </div>
@@ -43,11 +43,11 @@
         <div class="row border-bottom">
             <div class="col-sm-6 col-md-3">
                 <div class="widget dark"> <img class="mt-5 mb-20" alt="" src="images/logo-2.png">
-                    <p>203, Name Labs, Behind Alis Steet, Melbourne, City Name.</p>
+                    <p>Model Town,Ashulia, Savar,Dhaka</p>
                     <ul class="list-inline mt-5">
                         <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-color-2 mr-5"></i> <a class="text-gray" href="#">123-456-789</a> </li>
-                        <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-color-2 mr-5"></i> <a class="text-gray" href="#">contact@yourdomain.com</a> </li>
-                        <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-theme-color-2 mr-5"></i> <a class="text-gray" href="#">www.yourdomain.com</a> </li>
+                        <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-color-2 mr-5"></i> <a class="text-gray" href="#">contact@dhs.com</a> </li>
+                        <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-theme-color-2 mr-5"></i> <a class="text-gray" href="#">www.dhs.com</a> </li>
                     </ul>
                 </div>
             </div>
@@ -120,8 +120,8 @@
             <div class="col-md-3 col-sm-4">
                 <div class="widget dark">
                     <h5 class="widget-title mb-10">Call Us Now</h5>
-                    <div class="text-gray"> +61 3 1234 5678
-                        <br> +12 3 1234 5678 </div>
+                    <div class="text-gray"> +8801677390769
+                        <br> +8801689044066 </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-4">
@@ -132,7 +132,7 @@
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                         <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        
                     </ul>
                 </div>
             </div>

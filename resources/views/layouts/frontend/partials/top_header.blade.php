@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-12">
-          <p class="p-font-15 p-white"><a href="/">Developer House Solution</a></p>
+          <p style="font-size: 26px; font-family: " class="p-font-15 p-white"><a href="/">{{$title->sitetitle}}</a></p>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-12 text-right">
           <div class="header-top-links">
@@ -44,7 +44,7 @@
   <!--===== HEADER BOTTOM =====-->
   <div id="header-bottom">
     <div class="container">
-      <div class="row">
+{{--       <div class="row">
         <div class="col-md-2 hidden-xs hidden-sm"><a href="{{route('welcome')}}"><img src="{{asset('assets/frontend/images/logo-2.png')}}" alt="logo"/></a></div>
         <d  iv class="col-md-10 col-sm-12 col-xs-12">
           <div class="get-tuch text-left top20">
@@ -83,21 +83,22 @@
             </ul>
           </div>
         </div>
-      </div>
+      </div> --}}
       <nav class="navbar navbar-default navbar-sticky bootsnav">
     <div class="container">
       <div class="row">
         
           <!-- Start Header Navigation -->
-          <div class="navbar-header">
+          <div class="navbar-header" style="height: 104px;">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
             <i class="fa fa-bars"></i></button>
-            <a class="navbar-brand sticky_logo" href="index.html"><img src="images/logo-white.png" class="logo" alt=""></a>
+            <a class="navbar-brand sticky_logo" href="index.html"><img src="{{asset('assets/frontend/images/logo-2.png')}}" class="logo" alt=""></a>
+            <h1  class="navbar-brand sticky_logo" style="margin-top: 39px;font-size: 26px;">{{$title->sitetitle}}</h1>
           </div>
           <!-- End Header Navigation --> 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="navbar-menu">
-            <ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
+            <ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp" style="margin-top: 16px;">
               <li class="dropdown">
                 <a href="/">Homes</a>
               </li>

@@ -72,9 +72,13 @@
                         		    	<a title="view" class="btn btn-info waves-effect" href="{{ route('user.property.show', $property->id) }}">
                         		    		<i class="material-icons">visibility</i>
                         		    	</a>
-                        		    	<a title="Edit" class="btn btn-success waves-effect" href="{{ route('user.property.edit', $property->id) }}">
+
+                      		    	{{-- <a title="Edit" class="btn btn-success waves-effect" href="{{ route('user.property.edit', $property->id) }}">
                         		    		<i class="material-icons">edit</i>
                         		    	</a>
+                                                 --}}
+
+
                         		    	<button class="btn btn-danger" type="button" onclick="delete_property({{$property->id}})"><i class="material-icons">delete</i></button>
                                                 <form id="delete-form-{{$property->id}}" action="{{ route('user.property.destroy',$property->id) }}" method="post">
                                                     @csrf

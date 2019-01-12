@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Sitetitle;
 use App\Subscriver;
 use App\User;
 use Brian2694\Toastr\Facades\Toastr;
@@ -46,5 +47,32 @@ class DashboardController extends Controller
     public function alluserMethod(){
         $users = User::where('role_id',2)->get();
         return view('admin.alluser', compact('users'));
+    }
+
+    public function sitetitle()
+    {
+        
+        return view('admin.sitetitle');
+    }
+
+    public function change()
+    {
+        $title = Sitetitle::all();
+        return view('admin.change',compact('title'));
+    }
+
+    public function changesitetitle(Request $request)
+    {
+        $this->validate($request,[
+            'sitetitle'=>'required'
+        ]);
+
+        $sitetitle = Sitetitle::find(1);
+        $sitetitle->sitetitle = $request->sitetitle;
+        $sitetitle->save();
+
+        Toastr::success('Site Title Updated.', 'success');
+        return redirect()->back();
+
     }
 }
