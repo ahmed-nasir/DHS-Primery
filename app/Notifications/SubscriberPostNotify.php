@@ -7,10 +7,9 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class UserPropertyApproved extends Notification implements ShouldQueue
+class SubscriberPostNotify extends Notification implements ShouldQueue
 {
     use Queueable;
-
     public $property;
     /**
      * Create a new notification instance.
@@ -42,13 +41,12 @@ class UserPropertyApproved extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                     ->greeting('Hello, '.$this->property->user->name)
-                    ->subject('Post Approved. ')
-                    ->line('Your post has been approved.')
-                    ->line('Post Title:'. $this->property->property_title)
-                    ->line('To see your post click the link bellow.')
-                    ->action('View', url(route('user.property.show',$this->property->id)))
-                    ->line('Thank you for using our application!');
+            ->greeting('Hello, Subscriber!')
+             ->subject('New Post Available.')
+             ->line('There is a new post. we hope you will like it.')
+             ->line('Post Title:',$this->property->title)
+             ->action('View Post', url('/'))
+             ->line('Thank you for using our application!');
     }
 
     /**

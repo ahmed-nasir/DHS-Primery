@@ -91,6 +91,7 @@ class PropertyController extends Controller
 
         $users = User::where('role_id','1')->get();
         Notification::send($users, new UserPostNotifyToAdmin($post));
+        
         $currentId = $post->id;
 
         if ($request->hasFile('images')) {
@@ -98,6 +99,7 @@ class PropertyController extends Controller
             if (!Storage::disk('public')->exists('propertyImages')) {
                 Storage::disk('public')->makeDirectory('propertyImages');
             }
+
             $image_array = $request->file('images');
             $array_len = count($image_array);
             for ($i=0; $i < $array_len ; $i++) { 
@@ -205,6 +207,23 @@ class PropertyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $property = Post::find($id);
+        $property->delete();
+
+        Toastr::success('Post Deleted Successfully...', 'success');
+        return redirect()->route('user.property.index');
+    }
+
+
+    //approve property 
+    public function publish(Request $request, $id){
+        $property = Post::find($id);
+        if ($property->property_publication_status == false) {
+            $property->property_publication_status = true;
+            $property->save();
+        }
+        
+        Toastr::success('Post Approved Successfully', 'success');
+        return redirect()->back();
     }
 }

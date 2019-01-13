@@ -25,7 +25,7 @@
             <i class="material-icons">done</i>
             Approved</button>
         @else
-            <button class="btn btn-danger waves-effect pull-right" type="button" onclick="approve_property({{$property->id}})"><i class="material-icons">done</i></button>
+            <button class="btn btn-danger waves-effect pull-right" type="button" onclick="approve_property({{$property->id}})"><i class="material-icons">done</i>Approve</button>
                     <form id="approve-form-{{$property->id}}" action="{{ route('admin.property.approve',$property->id) }}" method="post">
                         @csrf
                         @method('PUT')

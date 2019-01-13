@@ -20,14 +20,16 @@
 @section('content')
     <div class="block-header">
         <a class="btn btn-primary waves-effect" href="{{ route('user.property.index') }}">Back</a>
-        @if ($property->is_approve == true)
+        @if ($property->property_publication_status == true)
             <button class="btn btn-success waves-effect pull-right" disabled="">
             <i class="material-icons">done</i>
-            Approved</button>
+            Published</button>
         @else
-{{--             <button class="btn btn-primary waves-effect pull-right">
-            <i class="material-icons">done</i>
-            Approve</button> --}}
+            <button class="btn btn-danger waves-effect pull-right" type="button" onclick="publish_property({{$property->id}})"><i class="material-icons">done</i> Publish</button>
+                    <form id="approve-form-{{$property->id}}" action="{{ route('user.property.publish',$property->id) }}" method="post">
+                        @csrf
+                        @method('PUT')
+                    </form>
         @endif
     </div>
     
@@ -85,4 +87,39 @@
 
 <!-- Bootstrap Tags Input Plugin Js -->
 <script src="{{asset('assets/backend/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js')}}"></script>
+
+<script src="https://unpkg.com/sweetalert2@7.19.1/dist/sweetalert2.all.js"></script>
+    <script type="text/javascript">
+        function publish_property(id){
+                const swalWithBootstrapButtons = swal.mixin({
+                  confirmButtonClass: 'btn btn-success',
+                  cancelButtonClass: 'btn btn-danger',
+                  buttonsStyling: false,
+                })
+
+                swalWithBootstrapButtons({
+                  title: 'Are you sure?',
+                  text: "You want to approve this property!",
+                  type: 'warning',
+                  showCancelButton: true,
+                  confirmButtonText: 'Yes, approve it!',
+                  cancelButtonText: 'No, cancel!',
+                  reverseButtons: true
+                }).then((result) => {
+                  if (result.value) {
+                   document.getElementById('approve-form-'+id).submit();
+
+                  } else if (
+                    // Read more about handling dismissals
+                    result.dismiss === swal.DismissReason.cancel
+                  ) {
+                    swalWithBootstrapButtons(
+                      'Cancelled',
+                      'Your Data is safe 🙂',
+                      'error'
+                    )
+                  }
+                })
+                        }
+    </script>
 @endpush

@@ -76,7 +76,7 @@
                         		    	<a title="Edit" class="btn btn-success waves-effect" href="{{ route('admin.property.edit', $property->id) }}">
                         		    		<i class="material-icons">edit</i>
                         		    	</a>
-                        		    	<button class="btn btn-danger" type="button" onclick="delete_property({{$property->id}})"><i class="material-icons">delete</i></button>
+                                        <button class="btn btn-danger" type="button" onclick="delete_property({{$property->id}})"><i class="material-icons">delete</i></button>
                                                 <form id="delete-form-{{$property->id}}" action="{{ route('admin.property.destroy',$property->id) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Notifications\SubscriberPostNotify;
 use App\Notifications\UserPropertyApproved;
 use App\Post;
 use App\Post_image;
 use App\Property;
+use App\Subscriver;
 use App\User;
 use Brian2694\Toastr\Facades\Toastr;
 use Carbon\Carbon;
@@ -206,10 +208,16 @@ class PropertyController extends Controller
             $property->is_approve = true;
             $property->save();
         }
-        
-        $users = User::where('role_id','2')->get();
+        $email = $property->user->email;
+        $users = User::where('role_id','2')->where('email', $email)->get();
         Notification::send($users, new UserPropertyApproved($property));
-
+        
+        $subscribers = Subscriver::all();
+        foreach($subscribers as $subscriber)
+        {
+            Notification::route('mail', $subscriber->email)
+            ->notify(new SubscriberPostNotify($property));
+        }
         Toastr::success('Post Approved Successfully', 'success');
         return redirect()->back();
     }

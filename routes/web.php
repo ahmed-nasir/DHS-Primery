@@ -49,6 +49,8 @@ Route::group(['as'=>'user.','prefix'=>'user', 'namespace'=>'User', 'middleware'=
 	Route::get('dashboard','DashboardController@index')->name('dashboard');
 	Route::resource('property','PropertyController');
 	Route::get('profile','DashboardController@profile')->name('profile');
+
+	Route::put('property/{property}/publish','PropertyController@publish')->name('property.publish');
 });
 
 

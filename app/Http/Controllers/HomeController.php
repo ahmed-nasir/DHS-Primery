@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function index()
     {
         $title = Sitetitle::find(1);
-        $properties = Post::where('is_approve', true)->latest()->paginate(6);
+        $properties = Post::where('is_approve', true)->where('property_publication_status', true)->latest()->paginate(6);
         return view('welcome',compact('properties','title'));
     }
 

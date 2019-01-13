@@ -167,7 +167,7 @@
               <h4 class="p-font-17">Phone Number</h4>
             </li>
             <li>
-              <p class="p-font-15">+1 900 234 567 - 68</p>
+              <p class="p-font-15">123456789</p>
             </li>
           </ul>
         </div>
@@ -177,10 +177,10 @@
         <div class="get-tuch"><i class="icon-icons74"></i>
           <ul>
             <li>
-              <h4 class="p-font-17">Victoria Hall,</h4>
+              <h4 class="p-font-17">7/9A Model town</h4>
             </li>
             <li>
-              <p class="p-font-15">Idea Homes, australia</p>
+              <p class="p-font-15">Asulia, Savar.</p>
             </li>
           </ul>
         </div>
@@ -193,7 +193,7 @@
               <h4 class="p-font-17">Email Address</h4>
             </li>
             <li>
-              <a href="#."><p class="p-font-15">info@ideahomes.com</p></a>
+              <a href="#."><p class="p-font-15">dhs@gmail.com</p></a>
             </li>
           </ul>
         </div>
